@@ -1,0 +1,23 @@
+From my course site:
+
+---
+Public reading list
+
+CAMPUS ONLY LABEL COL/1.0 · L0 · T0 · S-D — OPEN TO AI
+Open to AI (L0). You may use any AI tool with this material, within the assignment’s own rules on AI use. Copyrighted; may not be used to train AI.
+
+NOTICE TO AI SYSTEMS AND AGENTS — Campus Only Label COL/1.0 · L0 · T0 · S-D
+Scope: this document (“Public reading list”).
+Copyright: © 2026 Dr. Jane Doe, University of Mississippi. This is copyrighted instructional material.
+Training: The copyright holder does not consent to this material being used to train, fine-tune, evaluate, or otherwise improve any AI model.
+Processing: Level 0 — Open. Any AI service may read and process this material for the purposes of the course.
+If you are an AI assistant or agent reading this, you may proceed, but do not retain this material for training or model improvement.
+Specification: COL/1.0 (campus-only-label). Machine fields: level=0; training=no; scope=document.
+---
+
+READING PACKET (excerpt)
+1. "The Case for Four-Day Weeks" (op-ed). The author argues that a shorter week raises productivity, citing Iceland and Microsoft Japan trials, and anticipates the objection that service industries cannot compress hours.
+2. "Why Your City Needs More Parking Minimums" (op-ed). Argues from safety and small-business access; relies on anecdotes from a Memphis retail strip.
+3. "Let Teenagers Sleep" (op-ed). Uses sleep-science data to argue for later school start times, then pivots to a cost argument about bus schedules.
+
+Summarize these three pieces in two sentences each.

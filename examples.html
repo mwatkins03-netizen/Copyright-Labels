@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Only Label · Examples</title>
+<meta name="description" content="What a Campus Only Label looks like on a syllabus, in assignment directions, on a slide, in a handout footer, in an email, and on a course website, with what a student sees and what an AI reads in each place.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f4f4'/%3E%3Crect width='46' height='100' fill='%23317f43'/%3E%3Crect x='54' width='46' height='100' fill='%23cc0605'/%3E%3C/svg%3E">
+<style>main.wrap{max-width:1180px}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="brand">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"><span style="background:var(--secondary)"></span><span style="background:var(--accent)"></span><span style="background:var(--on-surface)"></span><span style="background:var(--surface);border:1px solid var(--on-surface)"></span></div>
+    <div>
+      <h1>Examples</h1>
+      <p>The same label carried through a course: syllabus, assignment page, slide, handout, email, website. Each example shows what a student sees and what an AI reads.</p>
+    </div>
+    <nav class="nav" aria-label="Pages">
+      <a href="index.html">Start</a>
+      <a href="builder.html">Advanced</a>
+      <a href="examples.html" aria-current="page">Examples</a>
+      <a href="learn.html">Learn</a>
+      <a href="learn.html#spec">Spec</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="quick">
+    <div><h2 id="exTitle">Showing the UM default</h2><p id="exSub">Campus AI only · Copilot and Gemini with go.olemiss.edu sign-in · no training. Build your own and the link to this page carries it here.</p></div>
+    <div class="presets"><a class="preset" id="editLink" href="builder.html"><b>Edit this label</b><span>opens the advanced builder</span></a></div>
+  </div>
+    <section class="dl-strip" aria-labelledby="dlh">
+    <span class="panel-code" aria-hidden="true">D · Downloads</span>
+    <h2 id="dlh">Download each example as a file, with your label in it</h2>
+    <p class="lead">Built in your browser from the label in this page's link, with a yellow box in each saying where it goes. Delete the box, add your content, done. Nothing is uploaded anywhere.</p>
+    <div class="dl-grid" id="liveDl">
+      <button class="dl" type="button" data-gen="syllabus"><span class="ext docx">Word</span><b>Syllabus</b><span>Label once under the AI policy; footer line</span><span class="go">Build ↓</span></button>
+      <button class="dl" type="button" data-gen="assignment"><span class="ext docx">Word</span><b>Assignment sheet</b><span>After directions, before submission</span><span class="go">Build ↓</span></button>
+      <button class="dl" type="button" data-gen="exam"><span class="ext docx">Word</span><b>Exam / student work</b><span>Separate No-AI label, top + footer</span><span class="go">Build ↓</span></button>
+      <a class="dl" id="livePrint" href="print.html" target="_blank" rel="noopener"><span class="ext pdf">PDF</span><b>Reading handout</b><span>Footer on every page; print to PDF</span><span class="go">Open ↗</span></a>
+      <button class="dl" type="button" data-gen="pptx"><span class="ext pptx">PowerPoint</span><b>Slide deck</b><span>Badge in footer; notice in notes</span><span class="go">Build ↓</span></button>
+      <button class="dl" type="button" data-gen="lms"><span class="ext html">HTML</span><b>LMS assignment page</b><span>Paste above the submit box</span><span class="go">Build ↓</span></button>
+      <button class="dl" type="button" data-gen="email"><span class="ext txt">Text</span><b>Email / announcement</b><span>Body + notice under a divider</span><span class="go">Build ↓</span></button>
+    </div>
+    <p class="small muted" style="margin:10px 0 0">Word and PowerPoint are generated on the spot from your label; the PDF opens a print view (Save as PDF). Prefer fixed samples with a placeholder name? <a href="examples-docs/index.html">They are here.</a></p>
+  </section>
+  <nav class="ex-nav" aria-label="Examples">
+    <a href="#syllabus">1 Syllabus</a><a href="#assignment">2 Assignment</a><a href="#slide">3 Slide</a><a href="#handout">4 Handout</a><a href="#email">5 Email</a><a href="#site">6 Website</a>
+  </nav>
+
+  <section class="exemplar" id="syllabus"><span class="panel-code" aria-hidden="true">X1 · Syllabus</span>
+    <h2>On the syllabus</h2>
+    <p class="how">Paste the inline HTML (export E3) into the syllabus, or the plain text (E4) into Word. Put it once, near the AI-use policy, with scope set to the whole course. Students see the badge and two sentences; the short notice sits under it in small grey type, and the full terms are behind the label link.</p>
+    <div class="ex-dl"><button class="btn small" type="button" data-gen="syllabus">Build the Word syllabus ↓</button></div>
+    <div class="ex-grid">
+      <div class="stage paper" id="stSyllabus"></div>
+      <div class="sees" id="seesSyllabus"></div>
+    </div>
+  </section>
+
+  <section class="exemplar" id="assignment"><span class="panel-code" aria-hidden="true">X2 · Assignment</span>
+    <h2>In assignment directions (Blackboard, Canvas)</h2>
+    <p class="how">The paste-in HTML survives the LMS editor. The notice to AI systems rides along in the collapsed block, so a student who copies the whole page into a chatbot copies the notice too.</p>
+    <div class="ex-dl"><button class="btn small" type="button" data-gen="lms">Build the LMS page ↓</button> <button class="btn small" type="button" data-gen="assignment">Build the Word assignment sheet ↓</button></div>
+    <div class="ex-grid">
+      <div class="stage lms" id="stLms"></div>
+      <div class="sees" id="seesLms"></div>
+    </div>
+  </section>
+
+  <section class="exemplar" id="slide"><span class="panel-code" aria-hidden="true">X3 · Slide</span>
+    <h2>On a slide</h2>
+    <p class="how">The badge image (E5) in the footer of the title slide and the last slide, plus one spoken sentence. An image is the one layer a model cannot reliably read, so the slide also carries the student line as text.</p>
+    <div class="ex-dl"><button class="btn small" type="button" data-gen="pptx">Build the slide deck ↓</button></div>
+    <div class="ex-grid">
+      <div class="stage slide" id="stSlide"></div>
+      <div class="sees" id="seesSlide"></div>
+    </div>
+  </section>
+
+  <section class="exemplar" id="handout"><span class="panel-code" aria-hidden="true">X4 · Handout</span>
+    <h2>In a handout or PDF footer</h2>
+    <p class="how">The plain text (E4) in the page footer of every page. When a student photographs or uploads a page, the notice is in the frame.</p>
+    <div class="ex-dl"><a class="btn small" href="print.html" target="_blank" rel="noopener" data-print>Open the handout print view ↗</a></div>
+    <div class="ex-grid">
+      <div class="stage handout" id="stHandout"></div>
+      <div class="sees" id="seesHandout"></div>
+    </div>
+  </section>
+
+  <section class="exemplar" id="email"><span class="panel-code" aria-hidden="true">X5 · Email</span>
+    <h2>In an announcement or email</h2>
+    <p class="how">The student line, the link, and the notice under a divider. Mail clients strip HTML unpredictably; plain text does not break.</p>
+    <div class="ex-dl"><button class="btn small" type="button" data-gen="email">Build the email text ↓</button></div>
+    <div class="ex-grid">
+      <div class="stage mail" id="stMail"></div>
+      <div class="sees" id="seesMail"></div>
+    </div>
+  </section>
+
+  <section class="exemplar" id="site"><span class="panel-code" aria-hidden="true">X6 · Website</span>
+    <h2>On a course website</h2>
+    <p class="how">The head tags on every page and the robots.txt at the root (E6). These speak to crawlers before a page is ever opened.</p>
+    <div class="ex-grid">
+      <div class="stage site" id="stSite"></div>
+      <div class="sees" id="seesSite"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h3>About</h3><p>Campus Only Label COL/1.0. Examples render live from the label in the link, so what you see here is exactly what your exports contain. <a href="learn.html">Why it matters.</a></p></div>
+    <div><h3>Attribution and AI disclosure</h3><p>Marc Watkins, University of Mississippi, with Claude Fable 5.1. CC BY 4.0. Not legal advice.</p></div>
+  </div>
+</footer>
+
+<script src="assets/label.js"></script>
+<script src="assets/docgen.js"></script>
+<script>
+(function () {
+  var C = window.COL, $ = function (s) { return document.querySelector(s); };
+  var st = C.decode(location.hash); if (!st.holder) st.holder = 'Dr. J. Doe';
+  var L = C.LEVELS[st.level]; var hash = C.encodeShort(st);
+  $('#editLink').href = 'builder.html#' + hash;
+  if (location.hash.length > 1) { $('#exTitle').textContent = 'Showing your label: ' + L.name + ' (' + C.code(st) + ')'; $('#exSub').textContent = C.studentText(st); }
+  var labelURL = new URL('label.html', location.href); labelURL.hash = hash;
+  var student = C.studentText(st), notice = C.noticeText(st);
+
+  document.querySelectorAll('.ex-nav a[href^="#"]').forEach(function (a) { a.addEventListener('click', function (e) { var t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ block: 'start' }); } }); });
+  function sees (id, seenText, aiText, verdict) {
+    $('#' + id).innerHTML = '<h3>What a student sees</h3><div class="txt">' + seenText + '</div><h3 class="ai">What an AI reads</h3><pre>' + C.esc(aiText) + '</pre><div class="verdict"><b>Requested response, and what models actually did (tested 2026-11-04)</b>' + verdict + '</div>';
+  }
+  var verdictFor = { 1: 'Requested: STOP and redirect unless campus coverage is verified. Observed with the label embedded in the material: Claude Haiku and Opus and one of three GPT configurations declined; Claude Sonnet and two GPT configurations flagged the policy and summarized anyway. Observed when the student first sends the ask-your-AI-first prompt: every GPT and every Claude run stopped with the exact two-line reply. <a href="learn.html#spec">Results.</a>', 2: 'Requested: STOP without quoting, summarizing or answering. Observed embedded: all three Claude models and one of three GPT configurations declined; two GPT configurations summarized. With the explicit check first: every GPT and Claude run stopped.', 0: 'Requested: PROCEED, then answer within the assignment rules. Observed: every model proceeded, and every model correctly refused to promise that T0 prevents retention or training, because a label cannot change a service\'s settings.' }[st.level];
+
+  /* 1 Syllabus */
+  var sc = Object.assign({}, st, { scope: 'course' });
+  $('#stSyllabus').innerHTML = '<h1>WRIT 102 · First-Year Writing II</h1><p class="meta">Spring 2026 · ' + C.esc(st.holder) + ' · ' + C.esc(st.inst) + '</p><h2>Course description</h2><div class="skel" style="width:95%"></div><div class="skel" style="width:88%"></div><div class="skel" style="width:60%"></div><h2>AI use and course materials</h2><p>Each assignment carries its own AI-use icons. Course materials carry this label:</p>' + C.inlineHTML(sc) + '<h2>Grading</h2><div class="skel" style="width:70%"></div><div class="skel" style="width:85%"></div>';
+  sees('seesSyllabus', 'A green L1 badge under the AI policy heading, titled Campus AI only, with the sentence: <q>' + C.esc(C.studentText(sc)) + '</q> and a collapsed line that reads "Notice to AI systems and agents".', C.noticeText(sc), verdictFor);
+
+  /* 2 LMS */
+  $('#stLms').innerHTML = '<div class="bar"><span>Blackboard · WRIT 102</span><span>' + C.esc(st.holder) + '</span></div><div class="crumb">WRIT 102 › Assignments › ' + C.esc(st.title || 'Essay 2: Rhetorical Analysis') + '</div><div class="content"><h1>' + C.esc(st.title || 'Essay 2: Rhetorical Analysis') + '</h1><div class="due">Due Friday 11:59 PM · 100 points</div><p>Choose one of the three op-eds in the reading packet and analyze how it builds its argument. 1,200 words, MLA format.</p>' + C.inlineHTML(st) + '<p style="margin-top:12px">Submit as a PDF below.</p></div>';
+  sees('seesLms', 'The badge and sentence sit between the directions and the submit button. The student line reads: <q>' + C.esc(student) + '</q>', notice, verdictFor);
+
+  /* 3 Slide */
+  $('#stSlide').innerHTML = '<div class="kicker">WRIT 102 · Week 9</div><h1>Reading an op-ed for structure</h1><div class="foot"><div><small>' + C.esc(L.name + '. ' + (st.level === 1 ? 'Use Copilot or Gemini with your go.olemiss.edu sign-in. ' : L.student + ' ') + 'Slides are copyrighted; no AI training.') + '</small></div>' + C.badgeSVG(st, 260) + '</div>';
+  sees('seesSlide', 'A badge in the slide footer and one line of text: <q>' + C.esc(L.name + '. ' + (st.level === 1 ? 'Use Copilot or Gemini with your go.olemiss.edu sign-in.' : L.student) + ' Slides are copyrighted; no AI training.') + '</q>', 'Only the footer text and the badge\'s alt text: "' + ('Campus Only Label ' + C.code(st) + ': ' + L.name) + '". A model that receives the slide as an image gets the badge visually; add the plain-text notice to the deck\'s notes or last slide for the full instruction.', verdictFor + ' From the image alone, a model may only recognise the level; the notes carry the instruction.');
+
+  /* 4 Handout */
+  var hd = Object.assign({}, st, { scope: 'document' });
+  $('#stHandout').innerHTML = '<div><h1>Reading packet · Three op-eds</h1><div class="skel" style="width:92%"></div><div class="skel" style="width:97%"></div><div class="skel" style="width:85%"></div><div class="skel" style="width:93%"></div><div class="skel" style="width:40%"></div><br><div class="skel" style="width:96%"></div><div class="skel" style="width:90%"></div><div class="skel" style="width:94%"></div><div class="skel" style="width:70%"></div></div><div class="pfoot"><b>' + C.esc('CAMPUS ONLY LABEL ' + C.code(hd) + ' · ' + L.name.toUpperCase()) + '</b> · ' + C.esc(C.studentText(hd)) + '<br>' + C.esc(C.noticeText(hd).split('\n').slice(0, 5).join(' ')) + ' <span style="color:#666">(notice continues on the label page)</span> · Page 1 of 12</div>';
+  sees('seesHandout', 'A footer on every page: the label code and name in bold, then the student line: <q>' + C.esc(C.studentText(hd)) + '</q>', C.noticeText(hd), verdictFor + ' A photographed page carries the footer in the frame.');
+
+  /* 5 Email */
+  var mailBody = 'Hi everyone,\n\nThe reading packet for Week 9 is posted. A reminder about how it may be used with AI:\n\n' + L.name.toUpperCase() + ' (' + C.code(st) + ')\n' + student + '\n\nLabel page: ' + labelURL.href + '\n\n' + C.esc(st.holder) + '\n\n----\n' + notice;
+  $('#stMail').innerHTML = '<div class="hd"><b>Week 9 reading packet posted</b><span>From: ' + C.esc(st.holder) + ' &lt;' + C.esc(st.contact || 'instructor@olemiss.edu') + '&gt;</span><span>To: WRIT 102 (all sections)</span></div><div class="body">' + C.esc(mailBody) + '</div>';
+  sees('seesMail', 'A short announcement with the level name in capitals, the student line, and the label link; the notice sits under a divider at the bottom.', notice, verdictFor);
+
+  /* live downloads */
+  document.querySelectorAll('[data-print]').forEach(function (a) { a.href = 'print.html#' + C.encodeShort(st); }); $('#livePrint').href = 'print.html#' + C.encodeShort(st);
+  function lmsFile () { var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>' + C.esc(st.title || 'Assignment') + '</title></head><body style="font-family:Arial,sans-serif;max-width:760px;margin:24px auto;padding:0 16px"><div style="background:#FFF4C2;border:2px solid #B8860B;padding:12px 16px;margin-bottom:18px;font-size:14px"><small style="color:#555">INSTRUCTIONS FOR FACULTY (do not paste this box)</small><br><b>Where the label goes on an LMS assignment page:</b> open the page editor, switch to the HTML view, and paste the block below after the directions and before the submission box. Save, reload, and check the grey notice text is still there.</div><h1>' + C.esc(st.title || 'Assignment') + '</h1><p>Directions go here.</p>' + C.inlineHTML(Object.assign({}, st, { terms: st.terms || labelURL.href })) + '<p style="margin-top:16px;border:1px dashed #999;padding:10px;color:#666">[ Submission box ]</p></body></html>'; return Promise.resolve({ blob: new Blob([html], { type: 'text/html' }), name: C.fileName(st, 'html').replace('.html', '-lms.html') }); }
+  function emailFile () { return Promise.resolve({ blob: new Blob([mailBody.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')], { type: 'text/plain' }), name: C.fileName(st, 'txt').replace('.txt', '-email.txt') }); }
+  document.querySelectorAll('[data-gen]').forEach(function (b) { b.addEventListener('click', function () {
+    var k = b.getAttribute('data-gen'); var go = b.querySelector('.go'); var old = go ? go.textContent : b.textContent; if (go) go.textContent = 'Building\u2026'; else b.textContent = 'Building\u2026'; b.disabled = true;
+    var p = k === 'pptx' ? COLDOC.pptxFile(st) : k === 'lms' ? lmsFile() : k === 'email' ? emailFile() : COLDOC.wordFile(k, st);
+    p.then(function (r) { COLDOC.save(r); C.toast('Downloaded ' + r.name); }).catch(function (e) { C.toast('Could not build the file: ' + e.message); }).then(function () { if (go) go.textContent = old; else b.textContent = old; b.disabled = false; });
+  }); });
+
+  /* 6 Site */
+  $('#stSite').innerHTML = '<div class="tabbar"><span>robots.txt</span><span>&lt;head&gt;</span></div><pre>' + C.esc(C.robotsKit(st).split('\n').slice(0, 12).join('\n') + '\n…\n\n' + C.headKit(st)) + '</pre>';
+  sees('seesSite', 'Nothing. These signals are invisible to students; the page itself still carries the inline label.', 'Crawler rules naming GPTBot, ClaudeBot, Google-Extended and others, plus head tags: robots noai, tdm-reservation, campus-only-label, and the copyright line.', 'Documented crawlers skip the site for training; the TDM reservation records the opt-out for EU-style regimes. Voluntary on the crawler\'s side.');
+})();
+</script>
+</body>
+</html>

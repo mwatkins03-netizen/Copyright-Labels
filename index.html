@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Only Label · Start</title>
+<meta name="description" content="Make one label in three steps and paste it into every course document: syllabus, assignments, handouts, slides, email. Students read two sentences; AI systems read the notice underneath.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f4f4'/%3E%3Crect width='46' height='100' fill='%23317f43'/%3E%3Crect x='54' width='46' height='100' fill='%23cc0605'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="brand">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"><span style="background:var(--secondary)"></span><span style="background:var(--accent)"></span><span style="background:var(--on-surface)"></span><span style="background:var(--surface);border:1px solid var(--on-surface)"></span></div>
+    <div>
+      <h1>Campus Only Label</h1>
+      <p>One label, three steps, every document. Students read two sentences; AI systems read the notice underneath.</p>
+    </div>
+    <nav class="nav" aria-label="Pages">
+      <a href="index.html" aria-current="page">Start</a>
+      <a href="builder.html">Advanced</a>
+      <a href="examples.html">Examples</a>
+      <a href="learn.html">Learn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap start" id="main">
+  <div class="hero sheet" style="margin-bottom:var(--grid)">
+    <span class="panel-code" aria-hidden="true">Start · 1/1</span>
+    <span class="stamp" aria-hidden="true">Request, not a lock</span>
+    <h1>Make your label. Paste it everywhere.</h1>
+    <p class="lead">Two minutes. The label tells students to use the campus AI (Copilot or Gemini with go.olemiss.edu) and tells any other AI to stop. The same block of text works in a syllabus, an assignment page, a PDF footer, slide notes and email.</p>
+  </div>
+
+  <div class="steps">
+    <section class="step" aria-labelledby="s1h">
+      <span class="n" aria-hidden="true">1</span>
+      <h2 id="s1h">Your name</h2>
+      <p class="hint">Goes on the copyright line. That line is the legal footing for everything else.</p>
+      <input id="holder" type="text" placeholder="e.g. Dr. Jane Doe" autocomplete="name" aria-label="Your name">
+    </section>
+
+    <section class="step" aria-labelledby="s2h">
+      <span class="n" aria-hidden="true">2</span>
+      <h2 id="s2h">What is this label for?</h2>
+      <p class="hint">Most faculty need only the first one, pasted once on the syllabus and in the footer of everything else. Make a second label only for exams.</p>
+      <div class="choice" role="radiogroup" aria-label="Label type">
+        <label class="on" data-sig="green"><input type="radio" name="kind" value="course" checked><span class="k">L1 · Campus AI only · whole course</span><b>My course materials</b><span>Students may use Copilot or Gemini with their go.olemiss.edu account, nothing else. Covers every reading, handout, slide deck and assignment.</span></label>
+        <label data-sig="red"><input type="radio" name="kind" value="exam"><span class="k">L2 · No AI · this document</span><b>An exam, quiz or student work</b><span>No AI tool at all, campus ones included. For tests, take-homes, peer-review packets, anything with other students' work.</span></label>
+      </div>
+    </section>
+
+    <section class="step" aria-labelledby="s3h">
+      <span class="n" aria-hidden="true">3</span>
+      <h2 id="s3h">Copy your label</h2>
+      <p class="hint">Paste it at the top of your syllabus and in the footer of everything else. Plain text, so it works in Word, Canvas, Blackboard, PowerPoint notes, Google Docs and email.</p>
+      <div class="result">
+        <div class="bar">
+          <button class="btn primary big" id="copyLabel" type="button">Copy your label</button>
+          <button class="btn" id="copyPrompt" type="button">Copy the student prompt</button>
+          <button class="btn" id="dlPNG" type="button">Download badge image</button>
+          <a class="btn" id="advLink" href="builder.html">Advanced options ↗</a>
+        </div>
+        <div class="bar" style="border-top:0">
+          <span class="code" style="margin-right:4px">Or download it already in a document:</span>
+          <button class="btn small" id="dSyll" type="button">Word syllabus</button>
+          <button class="btn small" id="dAssign" type="button">Word assignment sheet</button>
+          <button class="btn small" id="dExam" type="button">Word exam</button>
+          <button class="btn small" id="dSlides" type="button">PowerPoint deck</button>
+          <a class="btn small" id="dPrint" href="print.html" target="_blank" rel="noopener">PDF handout (print view)</a>
+        </div>
+        <div class="preview-badge" id="badge" aria-hidden="true"></div>
+        <textarea id="universal" readonly aria-label="Your label"></textarea>
+      </div>
+      <div class="where">
+        <div><b>Syllabus</b>Top of the AI policy. Once.</div>
+        <div><b>Handouts, PDFs</b>Page footer, small type.</div>
+        <div><b>Assignment pages</b>Above the submit button.</div>
+        <div><b>Slides</b>Speaker notes; badge in the footer.</div>
+        <div><b>Email</b>Under your signature.</div>
+      </div>
+      <div class="oneline" style="border-left-color:var(--secondary)"><b>See it done.</b> <a href="examples-docs/index.html">Seven example files</a> (syllabus, assignment, exam, PDF handout, slides, LMS page, email) with the label already in place and a note in each saying where it goes.</div>
+      <div class="oneline"><b>Give students the prompt too.</b> "Copy the student prompt" is a message students paste into any AI before any course material. In testing it stopped every model; the label alone stopped about half. <a href="learn.html#checklist">The whole routine</a> · <a href="learn.html#spec">the odds</a>.</div>
+    </section>
+  </div>
+
+  <div class="odds" role="note" style="margin-top:var(--grid)">
+    <div class="stamp2">Not foolproof. Not meant to be.</div>
+    <div>
+      <p>The label is a request with a copyright line behind it. It cannot stop an upload. In testing across six AI model configurations, about half honored an embedded label every time, and all of them stopped when the student sent the prompt first. The real protection is the campus tool; the label and the prompt point to it. <a href="learn.html#spec">Full results.</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h3>About</h3><p>Campus Only Label COL/1.0. Nothing you type is stored anywhere; the label lives in the link. <a href="examples.html">See it on a syllabus, an assignment and a slide.</a> <a href="learn.html">Why it matters.</a></p></div>
+    <div><h3>Attribution and AI disclosure</h3><p>Marc Watkins, University of Mississippi, with Claude Fable 5.1. CC BY 4.0. Not legal advice.</p></div>
+  </div>
+</footer>
+
+<script src="assets/label.js"></script>
+<script src="assets/docgen.js"></script>
+<script>
+(function () {
+  var C = window.COL, $ = function (s) { return document.querySelector(s); };
+  var st = C.decode(location.hash);
+  var kind = st.level === 2 ? 'exam' : 'course';
+  if (!location.hash) C.applyPreset(st, 'course');
+  $('#holder').value = st.holder || '';
+  document.querySelectorAll('.choice input').forEach(function (r) { r.checked = (r.value === kind); r.closest('label').classList.toggle('on', r.value === kind); r.addEventListener('change', function () {
+    kind = r.value; document.querySelectorAll('.choice label').forEach(function (l) { l.classList.toggle('on', l.querySelector('input').value === kind); });
+    var h = st.holder; C.applyPreset(st, kind === 'exam' ? 'exam' : 'course'); st.holder = h; render();
+  }); });
+  $('#holder').addEventListener('input', function () { st.holder = $('#holder').value; render(); });
+  function labelURL () { var u = new URL('label.html', location.href); u.hash = C.encodeShort(st); return u.href; }
+  function promptURL () { var u = new URL('label.html', location.href); u.search = '?prompt=1'; u.hash = C.encodeShort(st); return u.href; }
+  function render () {
+    $('#badge').innerHTML = C.badgeSVG(st, 440);
+    $('#universal').value = C.universalText(st, { label: labelURL(), prompt: promptURL() });
+    $('#advLink').href = 'builder.html#' + C.encodeShort(st);
+    var h = C.encodeShort(st); if (location.hash.slice(1) !== h) history.replaceState(null, '', '#' + h);
+  }
+  render();
+  $('#copyLabel').addEventListener('click', function () { C.copy($('#universal').value, function (ok) { C.toast(ok ? 'Label copied. Paste it anywhere.' : 'Copy failed: select the text and copy by hand'); }); });
+  $('#copyPrompt').addEventListener('click', function () { C.copy(C.permissionPrompt(st), function (ok) { C.toast(ok ? 'Student prompt copied' : 'Copy failed'); }); });
+  function gen (btn, fn) { btn.addEventListener('click', function () { var old = btn.textContent; btn.textContent = 'Building…'; btn.disabled = true; fn().then(function (r) { COLDOC.save(r); C.toast('Downloaded ' + r.name); }).catch(function (e) { C.toast('Could not build the file: ' + e.message); }).then(function () { btn.textContent = old; btn.disabled = false; }); }); }
+  gen($('#dSyll'), function () { return COLDOC.wordFile('syllabus', st); });
+  gen($('#dAssign'), function () { return COLDOC.wordFile('assignment', st); });
+  gen($('#dExam'), function () { return COLDOC.wordFile('exam', st); });
+  gen($('#dSlides'), function () { return COLDOC.pptxFile(st); });
+  $('#dlPNG').addEventListener('click', function () { C.badgePNG(st, 1320, function (b) { if (!b) return C.toast('PNG failed'); C.download(C.fileName(st, 'png'), b); C.toast('Badge downloaded'); }); });
+})();
+</script>
+</body>
+</html>

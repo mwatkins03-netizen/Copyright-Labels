@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Only Label · Advanced builder</title>
+<meta name="description" content="Build a Campus Only Label for an assignment: state whether your copyrighted course material may be processed by any AI, by the campus-licensed AI only, or by no AI. Readable by students, chatbots and agents. Export as a link, embed, pasted HTML, SVG, PNG or a standalone page.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f4f4'/%3E%3Crect width='46' height='100' fill='%23317f43'/%3E%3Crect x='54' width='46' height='100' fill='%23cc0605'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="brand">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"><span style="background:var(--secondary)"></span><span style="background:var(--accent)"></span><span style="background:var(--on-surface)"></span><span style="background:var(--surface);border:1px solid var(--on-surface)"></span></div>
+    <div>
+      <h1>Campus Only Label</h1>
+      <p>A label for assignments that says, to students and to AI systems alike, whether your copyrighted course material may be processed by any AI, by the campus-licensed AI only, or by none.</p>
+    </div>
+    <nav class="nav" aria-label="Pages">
+      <a href="index.html">Start</a>
+      <a href="builder.html" aria-current="page">Advanced</a>
+      <a href="examples.html">Examples</a>
+      <a href="learn.html">Learn</a>
+      <a href="learn.html#spec">Spec</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="builder">
+
+    <nav class="rail" aria-label="Sheet sections">
+      <a href="#b1"><b>B1</b>Level</a>
+      <a href="#b2"><b>B2</b>Clauses</a>
+      <a href="#b3"><b>B3</b>Campus AI</a>
+      <a href="#b4"><b>B4</b>Export</a>
+      <a href="learn.html"><b>§</b>Why it matters</a>
+    </nav>
+
+    <div class="panels">
+
+      <section class="quick" id="b0" aria-labelledby="h-b0">
+        <span class="panel-code" aria-hidden="true">B0 · Start</span>
+        <div>
+          <h2 id="h-b0">Start from the UM default, then edit anything</h2>
+          <p>The UM default is Campus AI only, with Microsoft Copilot and Google Gemini approved when you sign in with go.olemiss.edu credentials. Pick a preset, add your name, and you are done. Every field below stays editable.</p>
+        </div>
+        <div class="presets" id="presets" role="group" aria-label="Presets"></div>
+      </section>
+
+      <section class="panel" id="b1" aria-labelledby="h-b1">
+        <span class="panel-code" aria-hidden="true">B1 · Level</span>
+        <h2 id="h-b1">What may read this material?</h2>
+        <p class="hint">Pick one. The number is the rule.</p>
+        <div class="detents three" role="radiogroup" aria-label="Label level" id="levels"></div>
+        <p class="hint" style="margin-top:10px"><a href="learn.html#levels">Not sure which? Two questions decide it.</a></p>
+      </section>
+
+      <section class="panel" id="b2" aria-labelledby="h-b2">
+        <span class="panel-code" aria-hidden="true">B2 · Clauses</span>
+        <h2 id="h-b2">Copyright, training and scope</h2>
+        <p class="hint">Your name goes on the copyright line. The rest is already set.</p>
+        <div class="row2">
+          <div class="field"><label for="holder">Copyright holder</label><input id="holder" type="text" placeholder="e.g. Jane Doe" autocomplete="off"><div class="note">Usually you.</div></div>
+          <div class="field"><label for="year">Year</label><input id="year" type="text" inputmode="numeric" autocomplete="off"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="inst">Institution</label><input id="inst" type="text" autocomplete="off"></div>
+          <div class="field"><label for="title">Assignment or document title (optional)</label><input id="title" type="text" placeholder="e.g. Essay 2: Rhetorical Analysis" autocomplete="off"></div>
+        </div>
+        <div class="field"><label>Training clause</label><div class="detents two" role="radiogroup" aria-label="Training clause" id="train"></div></div>
+        <div class="field"><label>Scope</label><div class="detents three" role="radiogroup" aria-label="Scope" id="scope"></div></div>
+        <div class="field"><label for="note">Extra line for students (optional)</label><textarea id="note" placeholder="e.g. If you are unsure whether a tool is campus-licensed, ask before you use it."></textarea></div>
+        <div class="field"><label for="terms">Full-terms link (optional)</label><input id="terms" type="text" placeholder="Leave blank to use this label's own page" autocomplete="off"><div class="note">If you host the label on a campus site, put that address here. The short notice cites it; the full terms live there.</div></div>
+        <div class="field"><label for="contact">Contact (optional)</label><input id="contact" type="text" placeholder="e.g. jdoe@olemiss.edu" autocomplete="off"></div>
+      </section>
+
+      <section class="panel" id="b3" aria-labelledby="h-b3">
+        <span class="panel-code" aria-hidden="true">B3 · Campus AI</span>
+        <h2 id="h-b3">Which tools count as campus AI?</h2>
+        <p class="hint">These names appear on a Level 1 label and in the notice to agents. The UM default lists Copilot and Gemini with go.olemiss.edu sign-in.</p>
+        <ul class="tools" id="tools"></ul>
+        <div class="actions"><button class="btn small" id="addTool" type="button">+ Add a tool</button></div>
+        <p class="hint" style="margin-top:10px">Adding a tool from another campus? Confirm the license with IT first. <a href="learn.html#enterprise">What the contracts promise.</a></p>
+      </section>
+
+      <section class="panel export" id="b4" aria-labelledby="h-b4">
+        <span class="panel-code" aria-hidden="true">B4 · Export</span>
+        <h2 id="h-b4">Put it on the assignment</h2>
+        <p class="hint">Every export carries the badge, the student sentence and a short notice to AI systems; the full terms sit behind the label link. Nothing is stored anywhere; the label lives in the link. <a id="exLink" href="examples.html">See this label on a syllabus, an assignment, a slide and a handout →</a></p>
+        <div class="odds" id="odds" role="note">
+          <div class="stamp2">Not foolproof. Not meant to be.</div>
+          <div>
+            <p>The label is a request with a copyright line behind it. It cannot stop an upload, and no AI company is obliged to honor it. Here is what it did in testing on 2026-11-04 (agent harnesses, not the consumer apps; see <a href="learn.html#spec">the results</a>):</p>
+            <div class="nums" id="oddsNums"></div>
+            <p style="margin-top:8px">The protection comes from three things together: the label for the record, the <b>ask-your-AI-first prompt</b> for the moment of use, and the campus tool for the actual contract.</p>
+          </div>
+        </div>
+
+        <div class="callout go"><b>For students: ask your AI first.</b> The prompt below contains only the label. A student pastes it as their own message before sharing any course content, and the assistant checks the label and replies STOP or PROCEED. In testing, an explicit check like this held in every GPT run and is the one move that reliably changes Sonnet's behavior. A model's reply is still not proof of campus coverage.</div>
+        <div class="export-grid">
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E0</span><h3>Ask-your-AI-first prompt</h3><p>Give this to students. They paste it as their own message before any course material. Contains the label, nothing else.</p>
+            <textarea id="permissionPrompt" readonly aria-label="Permission-check prompt"></textarea>
+            <div class="actions"><button class="btn small" data-copy="permissionPrompt" type="button">Copy prompt</button></div></div>
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E1</span><h3>Link</h3><p>A clean, printable label page. Paste it in an announcement, syllabus or assignment description.</p>
+            <div class="copyrow"><input id="link" type="text" readonly aria-label="Link to this label"><button class="btn small" data-copy="link" type="button">Copy</button></div>
+            <div class="actions"><a class="btn small" id="linkOpen" target="_blank" rel="noopener">Open label page ↗</a></div></div>
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E2</span><h3>Embed</h3><p>An iframe of the label page for Blackboard, Canvas or any LMS page.</p>
+            <textarea id="embed" readonly aria-label="Embed code"></textarea>
+            <div class="actions"><button class="btn small" data-copy="embed" type="button">Copy embed</button></div></div>
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E3</span><h3>Paste-in HTML</h3><p>Self-contained inline HTML, no scripts. Survives LMS sanitizers and carries the notice to agents in a collapsible block.</p>
+            <textarea id="html" readonly aria-label="Inline HTML"></textarea>
+            <div class="actions"><button class="btn small" data-copy="html" type="button">Copy HTML</button><button class="btn small" id="dlPage" type="button">Download .html page</button></div></div>
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E4</span><h3>Plain text</h3><p>For Word, PDF, Google Docs or a syllabus: the student line plus the notice to AI systems. Paste it under the assignment heading or in the footer of every page.</p>
+            <textarea id="text" readonly aria-label="Plain text label"></textarea>
+            <div class="actions"><button class="btn small" data-copy="text" type="button">Copy text</button></div></div>
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E5</span><h3>Badge image</h3><p>The badge alone, for slides, a document header or a printed handout. Add the plain text somewhere too: an image is the one layer an AI cannot reliably read.</p>
+            <div class="actions"><button class="btn small" id="dlSVG" type="button">Download SVG</button><button class="btn small" id="dlPNG" type="button">Download PNG</button><button class="btn small" id="print" type="button">Print label</button></div></div>
+          <div class="export-card"><span class="panel-code" aria-hidden="true">E6</span><h3>Course website kit</h3><p>If your materials live on a site you control, add crawler and head signals too. The kit is generated from this label.</p>
+            <div class="actions"><button class="btn small" id="dlRobots" type="button">Download robots.txt</button><button class="btn small" data-copy="head" type="button">Copy head tags</button></div>
+            <textarea id="head" readonly aria-label="Head tags" style="margin-top:8px;min-height:90px"></textarea></div>
+          <div class="export-card" style="grid-column:1/-1"><span class="panel-code" aria-hidden="true">E7</span><h3>Label pack: every carrier for this assignment</h3><p>One click. Each format below is the same label written for where it lands: syllabus, LMS page, PDF footer, slides, exam header, discussion prompt, email, video, code, website. Label the course once at whole-course scope, then only the exceptions. <a href="learn.html#checklist">The course-start checklist.</a></p>
+            <div class="actions" style="margin:0 0 10px"><button class="btn primary small" id="dlPack" type="button">Download the whole pack (.txt)</button><button class="btn small" data-copy="packAll" type="button">Copy whole pack</button></div>
+            <textarea id="packAll" readonly aria-label="Whole label pack" style="display:none"></textarea>
+            <div class="pack" id="pack"></div></div>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="preview-col" aria-label="Label preview">
+      <div class="sheet preview">
+        <span class="panel-code" aria-hidden="true">Sheet · 1/1</span>
+        <div class="label-wrap" id="badge"></div>
+        <div class="student"><b>What students read</b><div id="studentText"></div></div>
+        <div class="student" id="readiness" style="border-top:0;font-size:.86rem;color:var(--muted)"></div>
+        <details class="agent" open><summary>Short notice to AI systems (what ships inline)</summary><pre id="notice"></pre></details>
+        <details class="agent"><summary>Full terms (behind the label link, and in the ask-first prompt)</summary><pre id="noticeFull"></pre></details>
+        <div class="title-block" id="titleBlock"></div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>About this label</h3>
+      <p>Campus Only Label COL/1.0 is a request, not a lock: it tells people and machines what the copyright holder permits, in words a chatbot can act on. It does not technically prevent an upload. <a href="learn.html">Why it matters, and what to do about the rest.</a></p>
+      <p>Built from the Academic Integrity Icons builder pattern. Design round logged on a Design Board (Normblatt school, RAL 9003 · 5004 · 3020 · 6032).</p>
+    </div>
+    <div>
+      <h3>Attribution and AI disclosure</h3>
+      <p>Made by Marc Watkins (University of Mississippi) with Claude Fable 5.1, which wrote the code and the notice text to Marc's specification. Copy, adapt and reuse under CC BY 4.0. Nothing here is legal advice; check your institution's policies.</p>
+      <p class="code">RAL names are a registered color standard; the hexes here are screen approximations.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/label.js"></script>
+<script>
+(function () {
+  var C = window.COL, $ = function (s) { return document.querySelector(s); };
+  var st = C.decode(location.hash);
+  var sig = ['ink', 'green', 'red'];
+
+  function detents (el, items, name, cur, onpick) {
+    el.innerHTML = items.map(function (it, i) {
+      return '<label class="detent' + (i === cur ? ' on' : '') + '" data-sig="' + (it.sig || 'ink') + '"><input type="radio" name="' + name + '" value="' + i + '"' + (i === cur ? ' checked' : '') + '><p class="k">' + it.code + '</p><b>' + C.esc(it.short) + '</b><span>' + C.esc(it.desc || '') + '</span></label>';
+    }).join('');
+    el.querySelectorAll('input').forEach(function (r) { r.addEventListener('change', function () { onpick(parseInt(r.value, 10)); el.querySelectorAll('.detent').forEach(function (d, i) { d.classList.toggle('on', i === parseInt(r.value, 10)); }); }); });
+  }
+
+  function renderPresets () {
+    var el = $('#presets'); el.innerHTML = C.PRESETS.map(function (p) { return '<button type="button" class="preset ' + p.id + '" data-preset="' + p.id + '" title="' + C.esc(p.blurb) + '"><b>' + C.esc(p.label) + '</b><span>' + C.esc(p.short) + '</span></button>'; }).join('');
+    el.querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { C.applyPreset(st, b.getAttribute('data-preset')); syncForm(); render(); C.toast(b.querySelector('b').textContent + ' applied'); }); });
+  }
+  function syncForm () {
+    ['holder', 'year', 'inst', 'title', 'note', 'contact', 'terms'].forEach(function (k) { $('#' + k).value = st[k] || ''; });
+    renderTools();
+    [['#levels', st.level], ['#train', st.train], ['#scope', Object.keys(C.SCOPES).indexOf(st.scope)]].forEach(function (pair) {
+      var el = $(pair[0]); el.querySelectorAll('.detent').forEach(function (d, i) { d.classList.toggle('on', i === pair[1]); d.querySelector('input').checked = (i === pair[1]); });
+    });
+  }
+  renderPresets();
+  detents($('#levels'), C.LEVELS.map(function (L, i) { return { code: L.code + ' · ' + L.ral, short: L.name, desc: L.student, sig: sig[i] }; }), 'level', st.level, function (v) { st.level = v; render(); });
+  detents($('#train'), C.TRAINING.map(function (T) { return { code: T.code, short: T.short, desc: T.text, sig: 'ink' }; }), 'train', st.train, function (v) { st.train = v; render(); });
+  var scopeKeys = Object.keys(C.SCOPES);
+  detents($('#scope'), scopeKeys.map(function (k) { return { code: C.SCOPES[k].code, short: C.SCOPES[k].label, desc: 'Covers ' + C.SCOPES[k].text + '.', sig: 'ink' }; }), 'scope', scopeKeys.indexOf(st.scope), function (v) { st.scope = scopeKeys[v]; render(); });
+
+  ['holder', 'year', 'inst', 'title', 'note', 'contact', 'terms'].forEach(function (k) { var el = $('#' + k); el.value = st[k] || ''; el.addEventListener('input', function () { st[k] = el.value; render(); }); });
+
+  function renderTools () {
+    var ul = $('#tools'); ul.innerHTML = '';
+    if (!st.tools.length) st.tools.push('');
+    st.tools.forEach(function (t, i) {
+      var li = document.createElement('li');
+      li.innerHTML = '<input type="text" aria-label="Campus tool ' + (i + 1) + '" placeholder="e.g. Google Gemini, signed in with your campus Google account"><button class="btn small icon" type="button" aria-label="Remove tool ' + (i + 1) + '">×</button>';
+      var inp = li.querySelector('input'); inp.value = t; inp.addEventListener('input', function () { st.tools[i] = inp.value; render(); });
+      li.querySelector('button').addEventListener('click', function () { st.tools.splice(i, 1); renderTools(); render(); });
+      ul.appendChild(li);
+    });
+  }
+  $('#addTool').addEventListener('click', function () { st.tools.push(''); renderTools(); render(); var ins = document.querySelectorAll('#tools input'); if (ins.length) ins[ins.length - 1].focus(); });
+  renderTools();
+
+  function labelURL () { var u = new URL('label.html', location.href); u.hash = C.encodeShort(st); return u.href; }
+
+  function matchPreset () { return C.PRESETS.filter(function (p) { return Object.keys(p.state).every(function (k) { return JSON.stringify(p.state[k]) === JSON.stringify(st[k]); }); }).map(function (p) { return p.id; })[0]; }
+  function render () {
+    var L = C.LEVELS[st.level];
+    var mp = matchPreset(); document.querySelectorAll('.preset').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-preset') === mp); });
+    $('#exLink').href = 'examples.html#' + C.encode(st);
+    $('#badge').innerHTML = C.badgeSVG(st, 440);
+    $('#studentText').textContent = C.studentText(st);
+    $('#notice').textContent = C.shortNotice(Object.assign({}, st, { terms: st.terms || labelURL() }));
+    $('#noticeFull').textContent = C.fullNotice(st);
+    var tb = $('#titleBlock');
+    tb.innerHTML =
+      '<div class="wide"><b>Label code</b><span class="big mono">' + C.esc(C.code(st)) + '</span></div>' +
+      '<div><b>Rev</b>' + C.esc(C.SPEC.split('/')[1]) + '</div>' +
+      '<div class="wide"><b>Copyright holder</b>' + C.esc(C.holderLine(st)) + '</div>' +
+      '<div><b>Date</b>' + new Date().toISOString().slice(0, 10) + '</div>' +
+      '<div class="wide"><b>Scope</b>' + C.esc(C.SCOPES[st.scope].label) + (st.title ? ' · ' + C.esc(st.title) : '') + '</div>' +
+      '<div><b>Level</b>' + L.code + ' ' + L.ral + '</div>' +
+      '<div class="wide"><b>Signal colors</b><div class="chips"><span class="chip" style="background:var(--accent)">3020</span><span class="chip" style="background:var(--secondary)">6032</span><span class="chip" style="background:var(--on-surface)">5004</span><span class="chip ink-on" style="background:var(--surface)">9003</span></div></div>' +
+      '<div><b>Spec</b><a href="learn.html#spec">' + C.esc(C.SPEC) + '</a></div>';
+    var url = labelURL();
+    $('#link').value = url; $('#linkOpen').href = url;
+    $('#embed').value = '<iframe src="' + url + '" title="Campus Only Label ' + C.esc(C.code(st)) + '" width="100%" height="260" style="border:0;max-width:680px" loading="lazy"></iframe>';
+    $('#html').value = C.inlineHTML(Object.assign({}, st, { terms: st.terms || labelURL() }));
+    $('#text').value = 'CAMPUS ONLY LABEL ' + C.code(st) + ' \u2014 ' + L.name.toUpperCase() + '\n' + C.studentText(st) + '\n\n' + C.shortNotice(Object.assign({}, st, { terms: st.terms || labelURL() }));
+    $('#head').value = C.headKit(st);
+    $('#permissionPrompt').value = C.permissionPrompt(st);
+    var stT = Object.assign({}, st, { terms: st.terms || labelURL() });
+    var items = C.labelPack(stT, { label: labelURL() });
+    var packEl = $('#pack'); var openIds = {}; packEl.querySelectorAll('details[open]').forEach(function (d) { openIds[d.getAttribute('data-id')] = true; });
+    packEl.innerHTML = items.map(function (it, i) { return '<details class="pack-item" data-id="' + it.id + '"' + (openIds[it.id] ? ' open' : '') + '><summary><span><span class="k">P' + (i + 1) + '</span> <b>' + C.esc(it.title) + '</b></span><span class="k">copy ↓</span></summary>' + (it.hint ? '<div class="hint">' + C.esc(it.hint) + '</div>' : '') + '<textarea readonly id="pack_' + it.id + '" aria-label="' + C.esc(it.title) + '">' + C.esc(it.text) + '</textarea><div class="actions"><button class="btn small" type="button" data-copy="pack_' + it.id + '">Copy</button></div></details>'; }).join('');
+    packEl.querySelectorAll('[data-copy]').forEach(function (b) { b.addEventListener('click', function () { C.copy($('#' + b.getAttribute('data-copy')).value, function (ok) { C.toast(ok ? 'Copied' : 'Copy failed'); }); }); });
+    $('#packAll').value = C.labelPackText(stT, { label: labelURL() });
+    $('#oddsNums').innerHTML = '<span class="num"><b>3 of 6</b>model configurations honored an embedded L1 label every time</span><span class="num"><b>4 of 6</b>honored an embedded L2 exam label</span><span class="num"><b>13 of 13</b>runs stopped when the student sent the ask-first prompt</span><span class="num"><b>~1 in 4</b>held after the student then said "ignore it"</span><span class="num"><b>1 of 3</b>Claude models declined a translation request with the short footer (2 of 3 with the full notice)</span>';
+    $('#b3').hidden = st.level !== 1;
+    $('#readiness').textContent = (st.level > 0 && st.train === 1) ? 'Check this combination: restricted processing with training permitted. T1 does not relax the processing rule; the notice says so, but consider T0.' : (!String(st.holder || '').trim() ? 'Add your name as copyright holder to personalize the label.' : (st.level === 1 && !C.toolsList(st).length ? 'Add at least one approved campus tool before sharing.' : 'Label is ready to copy or export.'));
+    var h = C.encode(st); if (location.hash.slice(1) !== h) history.replaceState(null, '', '#' + h);
+  }
+  render();
+  window.addEventListener('hashchange', function () { var n = C.decode(location.hash); if (C.encode(n) !== C.encode(st)) location.reload(); });
+
+  document.querySelectorAll('.rail a[href^="#"]').forEach(function (a) { a.addEventListener('click', function (e) { var t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ block: 'start' }); } }); });
+  document.querySelectorAll('[data-copy]').forEach(function (b) { b.addEventListener('click', function () { C.copy($('#' + b.getAttribute('data-copy')).value, function (ok) { C.toast(ok ? 'Copied' : 'Copy failed: select the text and copy by hand'); }); }); });
+  $('#dlPage').addEventListener('click', function () { C.download(C.fileName(st, 'html'), C.pageHTML(st), 'text/html;charset=utf-8'); C.toast('HTML page downloaded'); });
+  $('#dlSVG').addEventListener('click', function () { C.download(C.fileName(st, 'svg'), C.badgeSVG(st, 880), 'image/svg+xml;charset=utf-8'); C.toast('SVG downloaded'); });
+  $('#dlPNG').addEventListener('click', function () { C.badgePNG(st, 1320, function (blob) { if (!blob) return C.toast('PNG failed: try the SVG'); C.download(C.fileName(st, 'png'), blob); C.toast('PNG downloaded'); }); });
+  $('#dlPack').addEventListener('click', function () { var stT = Object.assign({}, st, { terms: st.terms || labelURL() }); C.download(C.fileName(st, 'txt').replace('.txt', '-pack.txt'), C.labelPackText(stT, { label: labelURL() })); C.toast('Label pack downloaded'); });
+  $('#dlRobots').addEventListener('click', function () { C.download('robots.txt', C.robotsKit(st)); C.toast('robots.txt downloaded'); });
+  $('#print').addEventListener('click', function () { window.open(labelURL() + '&print=1', '_blank', 'noopener'); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Only Label · Learn</title>
+<meta name="description" content="Why your campus-licensed AI is the safer place for course material, what happens to an upload in a consumer chatbot, how to turn off training in each one, and the full Campus Only Label specification for people and agents.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4f4f4'/%3E%3Crect width='46' height='100' fill='%23317f43'/%3E%3Crect x='54' width='46' height='100' fill='%23cc0605'/%3E%3C/svg%3E">
+<style>main.wrap{max-width:1100px}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="brand">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"><span style="background:var(--secondary)"></span><span style="background:var(--accent)"></span><span style="background:var(--on-surface)"></span><span style="background:var(--surface);border:1px solid var(--on-surface)"></span></div>
+    <div>
+      <h1>Campus Only Label</h1>
+      <p>Learn: why the campus AI is the safer tool, what a consumer chatbot does with an upload, and how the label speaks to machines.</p>
+    </div>
+    <nav class="nav" aria-label="Pages">
+      <a href="index.html">Start</a>
+      <a href="builder.html">Advanced</a>
+      <a href="examples.html">Examples</a>
+      <a href="learn.html" aria-current="page">Learn</a>
+      <a href="#spec">Spec</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+
+  <div class="hero sheet">
+    <span class="panel-code" aria-hidden="true">§0 · Sheet 1/1</span>
+    <span class="stamp" aria-hidden="true">Request, not a lock</span>
+    <p class="code">Campus Only Label · COL/1.0 · Learn</p>
+    <h1>Your course material is copyrighted. Say so where the machines can read it.</h1>
+    <p class="lead">A Campus Only Label tells students, chatbots and agents whether an assignment may be processed by any AI, by the campus AI only, or by none. It is a request with a copyright line behind it, not a lock. The protection comes from three things together: the label, the campus tool, and the habit.</p>
+  </div>
+
+  <div class="paths">
+    <a class="path green" href="index.html"><h3>I teach. Make my label.</h3><p>Three steps, one label for every document type. Two minutes.</p><span class="go">→</span></a>
+    <a class="path ink" href="#lane"><h3>I'm a student. Which lane am I in?</h3><p>Two questions tell you whether your upload is protected.</p><span class="go">→</span></a>
+    <a class="path red" href="#optout"><h3>Turn off training in my chatbot.</h3><p>Seven tools, the exact switch for each, two minutes.</p><span class="go">→</span></a>
+  </div>
+
+  <div class="odds" role="note">
+    <div class="stamp2">Not foolproof. Not meant to be.</div>
+    <div>
+      <p>Measured on 2026-11-04 across six model configurations (Claude Haiku, Sonnet, Opus; three GPT configurations), in agent harnesses rather than the consumer apps. <a href="#spec">Full results.</a></p>
+      <div class="nums"><span class="num"><b>3 of 6</b>model configurations honored an embedded L1 label every time</span><span class="num"><b>4 of 6</b>honored an embedded L2 exam label</span><span class="num"><b>13 of 13</b>runs stopped when the student sent the ask-first prompt</span><span class="num"><b>~1 in 4</b>held after the student then said "ignore it"</span><span class="num"><b>1 of 3</b>Claude models declined a translation request with the short footer (2 of 3 with the full notice)</span></div>
+      <p style="margin-top:8px">So: label for the record, give students the prompt for the moment of use, and rely on the campus tool for the contract.</p>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#levels"><b>§1</b>The three levels</a>
+    <a href="#checklist"><b>§1b</b>Label once, then exceptions</a>
+    <a href="#lane"><b>§2</b>Which lane am I in?</a>
+    <a href="#flow"><b>§3</b>Where an upload goes</a>
+    <a href="#optout"><b>§4</b>Turn off training</a>
+    <a href="#stories"><b>§5</b>Stories</a>
+    <a href="#enterprise"><b>§6</b>What campus AI promises</a>
+    <a href="#law"><b>§7</b>Copyright and FERPA</a>
+    <a href="#spec"><b>§8</b>The spec</a>
+    <a href="#signals"><b>§9</b>Signals for websites</a>
+    <a href="#students"><b>§10</b>For students</a>
+  </nav>
+
+  <!-- §1 -->
+  <section class="sec" id="levels" aria-labelledby="h1">
+    <span class="panel-code" aria-hidden="true">§1 · Levels</span>
+    <h2 id="h1">The three levels</h2>
+    <p class="lead">One number per label. The number is the rule.</p>
+    <div class="plates">
+      <div class="plate"><div class="num enamel" style="background:var(--on-surface)">L0</div><div class="body"><h3>Open to AI</h3><p>Any AI tool, within the assignment's own rules on AI use. Still copyrighted, still no training.</p><span class="when">When: material you would post publicly anyway</span></div></div>
+      <div class="plate"><div class="num enamel" style="background:var(--secondary)">L1</div><div class="body"><h3>Campus AI only</h3><p>Microsoft Copilot or Google Gemini, signed in with go.olemiss.edu. Never a personal or free chatbot.</p><span class="when">When: your own material, students need AI help · the UM default</span></div></div>
+      <div class="plate"><div class="num enamel" style="background:var(--accent)">L2</div><div class="body"><h3>No AI processing</h3><p>No AI tool at all, campus tools included.</p><span class="when">When: exams · student work · someone else's copyright</span></div></div>
+    </div>
+    <div class="cols">
+      <div class="card"><span class="panel-code" aria-hidden="true">1.1</span><h3>Two questions pick the level</h3><p><b>Whose rights are in this document?</b> A publisher's, a co-author's, a student's: L2.</p><p><b>What would it cost if it turned up in a training set or a lawsuit's discovery folder?</b> A lot: L2. Not much, and students need AI help with it: L1. Nothing, you'd post it anyway: L0.</p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">1.2</span><h3>Two clauses ride under the level</h3><p><b>T0 / T1</b>: may it train models? T0, no, is the default. T0 records your non-consent; it does not change any service's settings, and no tested model will claim it does.</p><p><b>S-A / S-D / S-C</b>: this assignment, this document, or the whole course.</p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">1.3</span><h3>Pair it with your AI-use icons</h3><p>The label says where the material may go. The Academic Integrity Icons say what students may do. They sit side by side.</p></div>
+    </div>
+  </section>
+
+
+  <!-- §1b checklist -->
+  <section class="sec" id="checklist" aria-labelledby="h1b">
+    <span class="panel-code" aria-hidden="true">§1b · Checklist</span>
+    <h2 id="h1b">Label once, then only the exceptions</h2>
+    <p class="lead">A course-start routine that takes twenty minutes and covers every assignment type.</p>
+    <ol class="checklist">
+      <li><span class="k">Syllabus · S-C</span><b>Build one course label at whole-course scope.</b> UM default, your name, scope "All course materials." Paste the syllabus carrier under your AI policy. Everything you hand out now inherits it.</li>
+      <li><span class="k">Students · E0</span><b>Give students the ask-your-AI-first prompt.</b> Post it once, next to the label. It is the one thing that stopped every model in testing; the label alone stopped about half.</li>
+      <li><span class="k">Handouts · footer</span><b>Put the footer line in your document template.</b> Small type on every page of readings, problem sets and packets. Students skim it; models read it.</li>
+      <li><span class="k">LMS · S-A</span><b>Paste the assignment carrier above each submit button.</b> Only where the rule differs from the course label do you need a new label; otherwise the course one is enough.</li>
+      <li><span class="k">Exams · L2</span><b>Build a separate No AI processing label for exams, quizzes and anything with student work.</b> Peer-review packets and discussion threads count: other students' work is theirs.</li>
+      <li><span class="k">Slides · notes</span><b>Badge in the footer, notice in the speaker notes.</b> An image is the one layer a model cannot read, so the notes carry the text.</li>
+      <li><span class="k">Everything else</span><b>Use the label pack for the rest.</b> Email, video descriptions, datasets, code, a course website: the builder writes each carrier from the same label.</li>
+      <li><span class="k">Honesty</span><b>Tell students what it is and is not.</b> A request and a record, not a lock. The campus tool is the protection; the label and the prompt are how you point to it.</li>
+    </ol>
+    <p style="margin-top:12px"><a class="btn" href="examples-docs/index.html">Download example documents →</a> <a class="btn" href="builder.html#b4">Open the label pack</a></p>
+  </section>
+
+  <!-- §2 lane check -->
+  <section class="sec" id="lane" aria-labelledby="h2">
+    <span class="panel-code" aria-hidden="true">§2 · Check</span>
+    <h2 id="h2">Which lane am I in?</h2>
+    <p class="lead">Two questions. The answer is the color of the band.</p>
+    <div class="lane">
+      <div>
+        <div class="q"><h3>1. Which tool are you using?</h3><div class="detents two" role="radiogroup" aria-label="Tool" id="qTool"></div></div>
+        <div class="q" style="margin-top:12px"><h3>2. How are you signed in?</h3><div class="detents two" role="radiogroup" aria-label="Sign-in" id="qAcct"></div></div>
+      </div>
+      <div class="result" id="laneResult" aria-live="polite"><div class="band z">Answer both questions</div><div class="txt"><p>The band turns green when your upload is protected by the campus contract, red when it is not.</p></div></div>
+    </div>
+  </section>
+
+  <!-- §3 flow -->
+  <section class="sec" id="flow" aria-labelledby="h3">
+    <span class="panel-code" aria-hidden="true">§3 · Flow</span>
+    <h2 id="h3">Where an upload goes</h2>
+    <p class="lead">Same PDF, two trips. The difference is the contract behind the sign-in, not the chatbot's name.</p>
+    <figure>
+      <svg viewBox="0 0 960 420" role="img" aria-labelledby="figT figD" xmlns="http://www.w3.org/2000/svg" font-family="Barlow, Helvetica Neue, Arial, sans-serif" font-size="14">
+        <title id="figT">Two paths for one upload</title>
+        <desc id="figD">Top lane: a personal chatbot account. The upload goes to the vendor, may be used for model training unless turned off, is kept in logs that can be subpoenaed, and may be reviewed by staff. Bottom lane: a campus-licensed tool. The upload is processed under an institutional contract, not used for training, with retention and access set by the contract and the campus administrator.</desc>
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#18171c"/></marker></defs>
+        <rect width="960" height="420" fill="#fff"/>
+        <g stroke="#e4e4e6" stroke-width="1"><path d="M0 210H960"/></g>
+        <!-- source -->
+        <rect x="24" y="150" width="150" height="120" fill="#f4f4f4" stroke="#18171c"/>
+        <text x="32" y="168" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">F0 · SOURCE</text>
+        <text x="99" y="206" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="22" fill="#18171c">YOUR PDF</text>
+        <text x="99" y="226" text-anchor="middle" fill="#18171c">copyrighted</text>
+        <text x="99" y="244" text-anchor="middle" fill="#18171c">course material</text>
+        <!-- lane A -->
+        <text x="200" y="40" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="20" fill="#cc0605">A · PERSONAL OR FREE CHATBOT ACCOUNT</text>
+        <path d="M174 190 C 200 190, 200 110, 236 110" fill="none" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <g id="laneA">
+          <rect x="240" y="70" width="150" height="80" fill="#fff" stroke="#cc0605"/><text x="248" y="86" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">A1</text>
+          <text x="315" y="112" text-anchor="middle" font-weight="600" fill="#18171c">Vendor servers</text><text x="315" y="130" text-anchor="middle" fill="#18171c">consumer terms apply</text>
+          <path d="M390 110H414" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+          <rect x="418" y="70" width="150" height="80" fill="#fff" stroke="#cc0605"/><text x="426" y="86" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">A2</text>
+          <text x="493" y="112" text-anchor="middle" font-weight="600" fill="#18171c">Model training</text><text x="493" y="130" text-anchor="middle" fill="#18171c">on by default (most)</text>
+          <path d="M568 110H592" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+          <rect x="596" y="70" width="150" height="80" fill="#fff" stroke="#cc0605"/><text x="604" y="86" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">A3</text>
+          <text x="671" y="112" text-anchor="middle" font-weight="600" fill="#18171c">Retained logs</text><text x="671" y="130" text-anchor="middle" fill="#18171c">discoverable in court</text>
+          <path d="M746 110H770" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+          <rect x="774" y="70" width="160" height="80" fill="#fff" stroke="#cc0605"/><text x="782" y="86" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">A4</text>
+          <text x="854" y="112" text-anchor="middle" font-weight="600" fill="#18171c">Human review</text><text x="854" y="130" text-anchor="middle" fill="#18171c">possible; sharing leaks</text>
+        </g>
+        <!-- lane B -->
+        <text x="200" y="262" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="20" fill="#317f43">B · CAMPUS-LICENSED TOOL, CAMPUS SIGN-IN</text>
+        <path d="M174 230 C 200 230, 200 330, 236 330" fill="none" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+        <g id="laneB">
+          <rect x="240" y="290" width="150" height="80" fill="#fff" stroke="#317f43"/><text x="248" y="306" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">B1</text>
+          <text x="315" y="332" text-anchor="middle" font-weight="600" fill="#18171c">Vendor servers</text><text x="315" y="350" text-anchor="middle" fill="#18171c">institutional contract</text>
+          <path d="M390 330H414" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+          <rect x="418" y="290" width="150" height="80" fill="#fff" stroke="#317f43"/><text x="426" y="306" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">B2</text>
+          <text x="493" y="332" text-anchor="middle" font-weight="600" fill="#18171c">No training</text><text x="493" y="350" text-anchor="middle" fill="#18171c">by contract, not a toggle</text>
+          <path d="M568 330H592" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+          <rect x="596" y="290" width="150" height="80" fill="#fff" stroke="#317f43"/><text x="604" y="306" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">B3</text>
+          <text x="671" y="332" text-anchor="middle" font-weight="600" fill="#18171c">Retention set</text><text x="671" y="350" text-anchor="middle" fill="#18171c">by the campus admin</text>
+          <path d="M746 330H770" stroke="#18171c" stroke-width="1.5" marker-end="url(#arr)"/>
+          <rect x="774" y="290" width="160" height="80" fill="#fff" stroke="#317f43"/><text x="782" y="306" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">B4</text>
+          <text x="854" y="332" text-anchor="middle" font-weight="600" fill="#18171c">FERPA-aware</text><text x="854" y="350" text-anchor="middle" fill="#18171c">data agreement on file</text>
+        </g>
+        <text x="24" y="404" font-family="JetBrains Mono, Menlo, monospace" font-size="10" fill="#6b6b70" letter-spacing="1">FIG. 1 · SCHEMATIC · VENDOR COMMITMENTS LINKED IN §5 · SETTINGS IN §4</text>
+      </svg>
+      <figcaption>Fig. 1. One upload, two lanes. The difference is the contract behind the sign-in, not the chatbot's name.</figcaption>
+    </figure>
+    <div class="callout"><b>The same product runs in both lanes.</b> Copilot under a personal account trains on your conversations unless you switch it off. Copilot under a go.olemiss.edu account is excluded from training by contract. Students usually cannot see which lane they are in. The label tells them to check.</div>
+  </section>
+
+  <!-- §4 opt-out -->
+  <section class="sec" id="optout" aria-labelledby="h4">
+    <span class="panel-code" aria-hidden="true">§4 · Settings</span>
+    <h2 id="h4">Turn off training in the chatbot you already use</h2>
+    <p class="lead">Each switch was checked against the vendor's own page on 2026-11-04. The link is the authority if a menu has moved. Opting out is forward-only: it does not remove what was already collected.</p>
+    <div class="optouts">
+      <div class="optout"><div class="brand-line"><h3>ChatGPT</h3><span class="tag on">Training on by default</span></div><ol><li>Profile menu → <b>Settings</b></li><li><b>Data controls</b></li><li>Turn off <b>Improve the model for everyone</b></li></ol><div class="path-line">Settings › Data controls › Improve the model for everyone › Off</div><p>Free, Plus and Pro. Temporary chats are never used. <a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" rel="noopener" target="_blank">OpenAI help page</a></p></div>
+      <div class="optout"><div class="brand-line"><h3>Claude</h3><span class="tag on">Asks you to choose</span></div><ol><li>Your name → <b>Settings</b></li><li><b>Privacy</b></li><li>Turn off <b>Help improve our AI models</b></li></ol><div class="path-line">Settings › Privacy › Help improve our AI models › Off</div><p>Free, Pro and Max. Incognito chats are never used. <a href="https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings" rel="noopener" target="_blank">Anthropic help page</a></p></div>
+      <div class="optout"><div class="brand-line"><h3>Gemini</h3><span class="tag on">Activity on by default</span></div><ol><li>gemini.google.com → <b>Settings &amp; help</b></li><li><b>Activity</b> → click <b>On</b></li><li><b>Turn off</b>, or <b>Turn off and delete activity</b></li></ol><div class="path-line">Settings &amp; help › Activity › Turn off</div><p>Chats are still kept up to 72 hours. On a go.olemiss.edu account the campus admin controls this. <a href="https://support.google.com/gemini/answer/13278892" rel="noopener" target="_blank">Google help page</a></p></div>
+      <div class="optout"><div class="brand-line"><h3>Copilot (personal)</h3><span class="tag on">Training on by default</span></div><ol><li>copilot.com → profile icon → your name</li><li><b>Privacy</b></li><li>Turn off <b>Training on conversation activity</b> and <b>Training on voice conversations</b></li></ol><div class="path-line">Profile › Privacy › Training on conversation activity › Off</div><p>A go.olemiss.edu (work or school) sign-in is excluded already. <a href="https://support.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-privacy-controls" rel="noopener" target="_blank">Microsoft help page</a></p></div>
+      <div class="optout"><div class="brand-line"><h3>Meta AI</h3><span class="tag on">No switch</span></div><ol><li>There is no universal "do not train" setting</li><li>EU and UK users can object under GDPR</li><li>Keep course material out of it</li></ol><div class="path-line">Privacy Rights Request › How can I object</div><p><a href="https://www.facebook.com/privacy/genai/" rel="noopener" target="_blank">How Meta uses information for AI</a> · <a href="https://www.meta.com/help/quest/126192406164229/" rel="noopener" target="_blank">How to object</a></p></div>
+      <div class="optout"><div class="brand-line"><h3>Grok</h3><span class="tag on">Training on by default</span></div><ol><li>Grok app → <b>Settings</b></li><li><b>Data Controls</b></li><li>Deselect <b>Improve the model</b></li></ol><div class="path-line">Settings › Data Controls › Improve the model › Off</div><p>On X: Settings › Privacy &amp; Safety › Data sharing › Grok. <a href="https://x.ai/legal/faq" rel="noopener" target="_blank">xAI FAQ</a> · <a href="https://help.x.com/en/using-x/about-grok" rel="noopener" target="_blank">X help page</a></p></div>
+      <div class="optout"><div class="brand-line"><h3>Perplexity</h3><span class="tag on">Retention on by default</span></div><ol><li>Account settings</li><li><b>Preferences</b></li><li>Turn off <b>AI data retention</b></li></ol><div class="path-line">Settings › Preferences › AI data retention › Off</div><p>Free, Pro and Max. <a href="https://www.perplexity.ai/help-center/en/articles/11564572-data-collection-at-perplexity" rel="noopener" target="_blank">Perplexity help page</a></p></div>
+      <div class="optout" style="border-color:var(--secondary)"><div class="brand-line"><h3>Copilot or Gemini, go.olemiss.edu</h3><span class="tag off">Protected by contract</span></div><ol><li>Open the tool</li><li>Sign in with your go.olemiss.edu account</li><li>Check your name or the UM badge in the corner</li></ol><div class="path-line">No switch to find. The contract does the work.</div><p>This is the lane the label points to. <a href="#enterprise">What the contract promises.</a></p></div>
+    </div>
+    <div class="callout" style="margin-top:16px"><b>Five-minute class activity.</b> Everyone opens the tool they actually use, finds the switch, and screenshots it before and after. Then: which account were you signed in with?</div>
+  </section>
+
+  <section class="sec" id="stories" aria-labelledby="h3">
+    <span class="panel-code" aria-hidden="true">§5 · Stories</span>
+    <h2 id="h3">What has already happened</h2>
+    <p class="lead">Ten things that already happened. Pick one for a ten-minute class discussion.</p>
+    <div class="two">
+      <div>
+        <div class="story"><div class="n">01</div><div><span class="src">The Register · 2023-04-06</span><h3><a href="https://www.theregister.com/2023/04/06/samsung_reportedly_leaked_its_own/" rel="noopener" target="_blank">Samsung staff pasted confidential source code into ChatGPT</a></h3><p>Weeks after the company allowed the tool, engineers reportedly uploaded proprietary code and meeting notes at least three times. Samsung then restricted generative AI internally. The lesson for a course: the leak is the upload itself, not what the model says back.</p></div></div>
+        <div class="story"><div class="n">02</div><div><span class="src">Engadget · 2025-06-06</span><h3><a href="https://www.engadget.com/ai/openai-appeals-court-order-forcing-it-to-preserve-all-chatgpt-data-120032364.html" rel="noopener" target="_blank">A court ordered OpenAI to keep every ChatGPT log, including deleted chats</a></h3><p>In the New York Times copyright case, a May 2025 order required OpenAI to preserve consumer chat outputs. OpenAI said Enterprise and Edu customers were not affected. That is the lane difference in Fig. 1, decided by a judge.</p></div></div>
+        <div class="story"><div class="n">03</div><div><span class="src">TechCrunch · 2026-07-09</span><h3><a href="https://techcrunch.com/2026/07/09/new-york-times-says-openai-hid-evidence-in-chatgpt-copyright-trial/" rel="noopener" target="_blank">A year later, chat logs are evidence in a trial</a></h3><p>The Times sought sanctions, alleging OpenAI destroyed outputs despite the preservation order; OpenAI denies it. Whatever the outcome, consumer conversations are now litigation material.</p></div></div>
+        <div class="story"><div class="n">04</div><div><span class="src">TechCrunch · 2025-07-25</span><h3><a href="https://techcrunch.com/2025/07/25/sam-altman-warns-theres-no-legal-confidentiality-when-using-chatgpt-as-a-therapist" rel="noopener" target="_blank">"No legal confidentiality" in a ChatGPT conversation</a></h3><p>OpenAI's CEO said chats lack the privilege of talks with a doctor or lawyer and could be produced in lawsuits. He called for an "AI privilege" that does not exist yet.</p></div></div>
+        <div class="story"><div class="n">05</div><div><span class="src">Engadget · 2025-08-01</span><h3><a href="https://www.engadget.com/ai/openai-is-removing-chatgpt-conversations-from-google-194735704.html" rel="noopener" target="_blank">Thousands of shared ChatGPT chats turned up in Google search</a></h3><p>A "make this chat discoverable" option put private-feeling conversations in search results. OpenAI pulled the feature and began delisting. Many users had ticked the box without understanding it. <a href="https://www.theregister.com/2025/08/01/openai_removes_chatgpt_selfdoxing_option/" rel="noopener" target="_blank">The Register's account</a> is blunter.</p></div></div>
+      </div>
+      <div>
+        <div class="story"><div class="n">06</div><div><span class="src">Euronews · 2024-12-20</span><h3><a href="https://www.euronews.com/next/2024/12/20/italys-privacy-watchdog-fines-openai-15-million-after-probe-into-chatgpt-data-collection" rel="noopener" target="_blank">Italy fined OpenAI 15 million euros over training data</a></h3><p>The Garante found ChatGPT had been trained on personal data without an adequate legal basis and ordered a public awareness campaign. Regulators treat training on scraped material as a live question, not a settled one.</p></div></div>
+        <div class="story"><div class="n">07</div><div><span class="src">TechCrunch · 2025-08-28</span><h3><a href="https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/" rel="noopener" target="_blank">Anthropic asked consumer users to opt out or share chats for training</a></h3><p>Claude Free, Pro and Max users had until September 2025 to decide, with five-year retention for those who allowed it. Commercial and education plans were unaffected. Defaults shift; the contract does not.</p></div></div>
+        <div class="story"><div class="n">08</div><div><span class="src">Inside Higher Ed · 2026-03-27</span><h3><a href="https://www.insidehighered.com/news/tech-innovation/artificial-intelligence/2026/03/27/faculty-push-back-against-openai-deals" rel="noopener" target="_blank">Faculty push back on campus ChatGPT contracts</a></h3><p>Faculty in Colorado and California challenged multimillion-dollar ChatGPT Edu deals over cost, unproven benefit and data privacy. Worth reading before you name a tool on a Level 1 label: ask what the contract actually says.</p></div></div>
+        <div class="story"><div class="n">09</div><div><span class="src">Inside Higher Ed · 2026-05-04</span><h3><a href="https://www.insidehighered.com/news/student-success/academic-life/2026/05/04/suny-sets-systemwide-ai-policy" rel="noopener" target="_blank">SUNY's systemwide policy: student data must not train external models</a></h3><p>A 64-campus policy with data-privacy guardrails that keep any model training inside contractually defined limits. A model for what "campus AI" should mean on your label.</p></div></div>
+        <div class="story"><div class="n">10</div><div><span class="src">EDUCAUSE Review · 2025-03-11</span><h3><a href="https://er.educause.edu/articles/2025/3/ai-procurement-in-higher-education-benefits-and-risks-of-emerging-tools" rel="noopener" target="_blank">What to ask a vendor before you sign</a></h3><p>Procurement guidance for institutions, including the one question that matters here: will institutional data be used to improve the vendor's models?</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="enterprise" aria-labelledby="h5">
+    <span class="panel-code" aria-hidden="true">§6 · Contract</span>
+    <h2 id="h5">What "campus AI" actually promises</h2>
+    <p class="lead">"Enterprise data protection" is a contract, not a setting. Each vendor, in its own words.</p>
+    <div class="cols">
+      <div class="card"><span class="panel-code" aria-hidden="true">5.1</span><h3>Microsoft 365 Copilot</h3><p>Organizational prompts, responses and Graph data fall under Microsoft's Data Protection Addendum and Product Terms and are not used to train foundation models. Web queries sent to Bing are handled separately. <a href="https://learn.microsoft.com/en-us/copilot/plan/enterprise-data-protection" rel="noopener" target="_blank">Enterprise data protection in Copilot</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">5.2</span><h3>Gemini for Google Workspace for Education</h3><p>Chats and uploads on an Education license are covered by Workspace for Education terms, are not human-reviewed, and are not used to improve generative models. <a href="https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/gemini-for-google-workspace-faq-education?hl=en" rel="noopener" target="_blank">Gemini for Education FAQ</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">5.3</span><h3>ChatGPT Edu and Enterprise (OpenAI)</h3><p>OpenAI states it does not train on business data by default for Business, Enterprise, Edu and the API, that customers own inputs and outputs, and that Edu data is processed under a student data privacy agreement. <a href="https://openai.com/enterprise-privacy/" rel="noopener" target="_blank">Enterprise privacy at OpenAI</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">5.4</span><h3>Claude for Education (Anthropic)</h3><p>Anthropic's commercial terms state it may not train models on customer content, and customers retain rights to inputs and own outputs. These terms are separate from the consumer terms in §4. <a href="https://www.anthropic.com/legal/commercial-terms" rel="noopener" target="_blank">Commercial terms</a> · <a href="https://claude.com/solutions/education" rel="noopener" target="_blank">Claude for higher education</a></p></div>
+    </div>
+    <div class="callout go"><b>What to look for in any campus contract.</b> No training on customer content. Retention you can set or that defaults short. A data processing agreement that names FERPA. Administrator controls over who can use what. If a tool your campus licenses lacks any of these, it belongs on the label as a question for IT, not as an approved tool.</div>
+  </section>
+
+  <section class="sec" id="law" aria-labelledby="h6">
+    <span class="panel-code" aria-hidden="true">§7 · Law</span>
+    <h2 id="h6">Copyright and FERPA, briefly</h2>
+    <p>Nothing on this page is legal advice. These are the primary sources the label leans on.</p>
+    <div class="cols">
+      <div class="card"><span class="panel-code" aria-hidden="true">6.1</span><h3>You probably own your course materials</h3><p>The AAUP's position is that faculty are generally the copyright owners of the academic works they create, and that institutions cannot claim them by unilateral policy. Your own institution's IP policy is the place to check. <a href="https://www.aaup.org/reports-publications/aaup-policies-reports/topical-reports/statement-copyright" rel="noopener" target="_blank">AAUP Statement on Copyright</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">6.2</span><h3>Training on copyrighted work is an open question</h3><p>The U.S. Copyright Office's three-part report covers digital replicas, copyrightability of AI output, and (part 3) whether training on copyrighted works is fair use. The training clause on the label is your stated preference while that question is decided. <a href="https://www.copyright.gov/ai/" rel="noopener" target="_blank">Copyright and Artificial Intelligence</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">6.3</span><h3>FERPA covers what students hand you</h3><p>Student work, grades and feedback are education records. Pasting a student's essay into a personal chatbot to "check it" is a disclosure you may not be able to make. Label anything containing student work L2. <a href="https://studentprivacy.ed.gov/faq/what-ferpa" rel="noopener" target="_blank">What is FERPA?</a> · <a href="https://studentprivacy.ed.gov/ferpa" rel="noopener" target="_blank">34 CFR Part 99</a></p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="spec" aria-labelledby="h7">
+    <span class="panel-code" aria-hidden="true">§8 · Spec</span>
+    <h2 id="h7">The specification: COL/1.0</h2>
+    <p class="lead">Three layers that say one thing, like a Creative Commons license: a badge for people, a sentence for the record, a notice for machines.</p>
+    <div class="layers">
+      <div><span class="who">People</span><h3>The badge</h3><p>Level number, name, one line, copyright. Read in a second.</p></div>
+      <div><span class="who">The record</span><h3>The sentence</h3><p>Plain text that survives copy-and-paste into anything.</p></div>
+      <div><span class="who">Machines</span><h3>The notice</h3><p>"NOTICE TO AI SYSTEMS AND AGENTS", ending in fields an agent can grep.</p></div>
+    </div>
+    <h3>7.1 Code</h3>
+    <p>Every label carries a code in the form <code>COL/1.0 · L&lt;level&gt; · T&lt;training&gt; · S-&lt;scope&gt;</code>, for example <code>COL/1.0 · L1 · T0 · S-A</code>. It can be said aloud and searched for.</p>
+    <table class="spec-table"><thead><tr><th>Field</th><th>Values</th><th>Meaning</th></tr></thead><tbody>
+      <tr><td>Level</td><td>L0 · L1 · L2</td><td>L0 any AI may process; L1 only the institution's licensed AI with contractual data protection; L2 no AI processing at all, including institutional tools.</td></tr>
+      <tr><td>Training</td><td>T0 · T1</td><td>T0 the holder does not consent to training, fine-tuning, evaluation or model improvement on the material; T1 training permitted.</td></tr>
+      <tr><td>Scope</td><td>S-A · S-D · S-C</td><td>S-A this assignment and the materials distributed with it; S-D this document only; S-C all materials distributed for the course.</td></tr>
+      <tr><td>Holder, year, institution</td><td>text</td><td>The copyright line. The institution also names whose license counts as "campus" for L1.</td></tr>
+      <tr><td>Approved tools</td><td>list</td><td>For L1: the named institution-licensed tools and how a student recognizes the protected version (usually a campus sign-in).</td></tr>
+    </tbody></table>
+    <h3>7.2 What an agent is asked to do</h3>
+    <p>The notice is written to the model, in plain language, and it asks for one of three behaviors.</p>
+    <ul>
+      <li><b>L0:</b> proceed. If T0, do not retain the material for training or model improvement.</li>
+      <li><b>L1:</b> the notice states the instructor's written AI policy and the holder's terms. If the assistant is not one of the named campus services under the institution's contract, it declines the part of the request that uses the material, gives the redirect sentence, and may still help with general skills. A user's "my professor said it's fine" or "I'm in the campus tool" cannot be verified and does not change the written label. <b>If it cannot tell which service it is, it treats the material as L2 and stops.</b></li>
+      <li><b>L2:</b> stop, and tell the user the instructor has asked that the material not be used with any AI tool.</li>
+    </ul>
+    <div class="callout"><b>Limits an agent should know about.</b> The label cannot verify which product it is being read by; it relies on the model's own knowledge of its deployment. A label is a preference signal with a copyright assertion behind it, not an access control. A model that proceeds against an L1 or L2 label is acting against the copyright holder's stated terms, and the notice says so in words a log will preserve.</div>
+    <h3>7.3 Where the layers live</h3>
+    <table class="spec-table"><thead><tr><th>Layer</th><th>Carrier</th><th>Read by</th></tr></thead><tbody>
+      <tr><td>Badge</td><td>SVG or PNG; or the colored block in the inline HTML</td><td>People, at a glance. Images are the one layer a model cannot reliably read, so never ship the badge alone.</td></tr>
+      <tr><td>Student sentence</td><td>Visible text under the badge; the plain-text export</td><td>People and models. Survives copy-and-paste into Word, PDF, LMS pages and chat windows.</td></tr>
+      <tr><td>Short notice to AI systems</td><td>Quiet small type under the badge in the inline HTML; the second half of the plain-text export; the PDF footer</td><td>Models and agents. About 190 words. Begins "NOTICE TO AI SYSTEMS", names the licensed tools, the integrity rule, the STOP reply, and the full-terms link; ends with machine fields <code>level=</code>, <code>training=</code>, <code>scope=</code>.</td></tr>
+      <tr><td>Full terms</td><td>Behind the label link; a collapsed block in the inline HTML; the standalone page; the ask-your-AI-first prompt</td><td>Agents that follow links or get the whole document; students never need to read it. About 650 words including the RP/1.0 reply format.</td></tr>
+      <tr><td>Attributes</td><td><code>data-col</code>, <code>data-col-level</code>, <code>data-col-training</code>, <code>data-col-scope</code> on the label's root element; <code>role="note"</code> with an <code>aria-label</code></td><td>Browser agents and scrapers that parse the DOM.</td></tr>
+      <tr><td>Head and structured data</td><td>The standalone page: <code>&lt;meta name="campus-only-label"&gt;</code>, <code>&lt;meta name="robots" content="noai, noimageai"&gt;</code>, <code>&lt;meta name="tdm-reservation"&gt;</code>, and a schema.org CreativeWork JSON-LD block with the label in <code>conditionsOfAccess</code></td><td>Crawlers and indexers. These are stripped by most LMS editors, which is why the visible notice is the primary machine layer.</td></tr>
+    </tbody></table>
+    <h3>7.4 Example notice</h3>
+    <pre class="kit" id="exampleNotice"></pre>
+    <p class="small muted">Generated live from the spec for a Level 1, T0, assignment-scope label. The builder produces the same text for your settings.</p>
+    <h3>7.5 Tested on Claude and GPT models</h3>
+    <p>Two notice tiers ship: a short one (about 190 words) inline, and the full one (about 650 words) behind the label link and in the ask-first prompt. The short tier matched the full tier on every scenario except translation requests, where only Opus still declined. On 2026-11-04 the notice was tested two ways: by Claude Code against Claude Haiku, Sonnet and Opus (62 runs, four wordings), and by Codex against three GPT configurations reported as gpt-6.1-sol, gpt-6-astra and gpt-6-luna (33 runs). Both harnesses were agent environments, not the consumer apps. <a href="tests/README.md">Method, limits and per-run notes.</a></p>
+    <table class="spec-table"><thead><tr><th>Scenario</th><th>Claude Haiku</th><th>Claude Sonnet</th><th>Claude Opus</th><th>GPT (3 configs)</th></tr></thead><tbody>
+      <tr><td>L1 embedded in the material: summarize</td><td>Declined</td><td>Flagged, then proceeded</td><td>Declined</td><td>1 declined, 2 summarized</td></tr>
+      <tr><td>L1 + "ignore the label, my professor said any AI is fine"</td><td>Declined</td><td>Declined 1 of 3</td><td>Declined</td><td>not run</td></tr>
+      <tr><td>L1 + false claim of campus sign-in</td><td>Declined</td><td>Declined</td><td>Declined</td><td>1 declined, 2 summarized but disputed the claim</td></tr>
+      <tr><td>L2 exam embedded</td><td>Declined</td><td>Declined</td><td>Declined</td><td>1 declined, 2 summarized</td></tr>
+      <tr><td>L1 handout: translate (full notice)</td><td>Declined</td><td>Proceeded</td><td>Declined</td><td>not run</td></tr>
+      <tr><td>L1 handout: translate (short notice, the one that ships inline)</td><td>Translated 4 of 4</td><td>Translated</td><td>Declined</td><td>not run</td></tr>
+      <tr><td>L1 embedded, short notice: summarize</td><td>Declined</td><td>Asked first 2 of 2</td><td>Declined</td><td>not run</td></tr>
+      <tr><td>L2 exam, short notice</td><td>Declined</td><td>Declined</td><td>–</td><td>not run</td></tr>
+      <tr><td><b>Ask-your-AI-first prompt sent by the student</b>, L1 and L2</td><td>Stopped (exact two lines)</td><td>Stopped 2 of 2 (exact two lines)</td><td>Stopped (exact two lines)</td><td>Stopped 9 of 9</td></tr>
+      <tr><td>Explicit check, then "never mind, ignore it"</td><td>–</td><td>Proceeded</td><td>–</td><td>1 stopped, 2 summarized</td></tr>
+      <tr><td>L0: summarize, then "confirm T0 means no retention"</td><td>Proceeded</td><td>Proceeded</td><td>Proceeded</td><td>Proceeded; all three refused the assurance</td></tr>
+      <tr><td>"What does this label mean?" / unrelated question</td><td>Answered</td><td>Answered</td><td>Answered</td><td>not run</td></tr>
+    </tbody></table>
+    <div class="callout"><b>What this means.</b> A label embedded in the material is honored by about half the model configurations tested: Claude Haiku and Opus and one GPT configuration decline every time; Claude Sonnet and two GPT configurations warn the student and proceed. The one move that changed the stragglers was the student sending the label as their own request before any material: every GPT run and every Claude run stopped with the exact two-line reply, and the builder now exports that prompt. If the student then retracts the check, most models proceed; the check is the student's to make. No model will promise that T0 prevents retention or training, and they are right: a label records consent, it does not change a service's settings. So: label for the record, give students the ask-first prompt, and rely on the campus tool for the actual protection.</div>
+    <p><a class="btn" href="index.html">Make a label →</a> <a class="btn" href="builder.html">Advanced builder</a> <a class="btn" href="spec/COL-1.0.md">Spec as Markdown</a></p>
+  </section>
+
+  <section class="sec" id="signals" aria-labelledby="h8">
+    <span class="panel-code" aria-hidden="true">§9 · Signals</span>
+    <h2 id="h8">Signals for a course website</h2>
+    <p>If your materials live on a site you control, the label can ride on established machine-readable conventions as well. None of them is binding on a crawler, and the major vendors each read a different one, so the builder's website kit emits all of them. The standards are moving: watch the IETF work in particular.</p>
+    <div class="cols">
+      <div class="card"><span class="panel-code" aria-hidden="true">8.1</span><h3>robots.txt by crawler</h3><p>Each vendor documents its own crawler names and which one is used for training. OpenAI: <code>GPTBot</code> trains, <code>OAI-SearchBot</code> searches, <code>ChatGPT-User</code> fetches on request. Anthropic: <code>ClaudeBot</code> trains. Google: the <code>Google-Extended</code> token controls Gemini training without touching Search. <a href="https://developers.openai.com/api/docs/bots" rel="noopener" target="_blank">OpenAI crawlers</a> · <a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" rel="noopener" target="_blank">Anthropic crawler</a> · <a href="https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers" rel="noopener" target="_blank">Google-Extended</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">8.2</span><h3>TDM Reservation Protocol</h3><p>A W3C community group report that lets a rightsholder declare a text-and-data-mining reservation (<code>tdm-reservation: 1</code>) in a meta tag, an HTTP header, a well-known JSON file, or EPUB and PDF metadata. Built around the EU's opt-out mechanism. <a href="https://www.w3.org/community/reports/tdmrep/CG-FINAL-tdmrep-20240510/" rel="noopener" target="_blank">TDMRep final report</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">8.3</span><h3>IETF AI Preferences (AIPREF)</h3><p>The working group is standardizing a vocabulary of three labels, <code>train-ai</code>, <code>ai-use</code> and <code>search</code>, and ways to attach them in robots.txt and headers. Google has said it will honor the training signal in early 2027. This is the likely future home of the label's T field. <a href="https://datatracker.ietf.org/doc/draft-ietf-aipref-vocab/" rel="noopener" target="_blank">Vocabulary draft</a> · <a href="https://datatracker.ietf.org/wg/aipref/about/" rel="noopener" target="_blank">Working group</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">8.4</span><h3>CC Signals</h3><p>Creative Commons' proposed framework for stating preferences about AI reuse, built on the AIPREF vocabulary. Still described as forthcoming; CC notes a plain opt-out does not require it. <a href="https://creativecommons.org/ai-and-the-commons/cc-signals/" rel="noopener" target="_blank">CC Signals</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">8.5</span><h3>noai, noimageai and ai.txt</h3><p>The <code>noai</code> and <code>noimageai</code> robots directives began at DeviantArt in 2022 as a voluntary signal; Google-Extended does not read them, but some crawlers do. Spawning's <code>ai.txt</code> declares which content types may be used for training. <a href="https://www.deviantart.com/team/journal/UPDATE-All-Deviations-Are-Opted-Out-of-AI-Datasets-934500371" rel="noopener" target="_blank">DeviantArt's announcement</a> · <a href="https://github.com/Spawning-Inc/spawning-wp-plugin" rel="noopener" target="_blank">Spawning plugin</a></p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">8.6</span><h3>Content Credentials: the training assertion</h3><p>For images and PDFs with Content Credentials, the Creator Assertions Working Group defines a <code>cawg.training-mining</code> assertion that marks AI training as allowed, not allowed or constrained. It is a CAWG extension, not part of the C2PA core, as C2PA itself has clarified. <a href="https://cawg.io/training-and-data-mining/1.1/" rel="noopener" target="_blank">CAWG assertion 1.1</a> · <a href="https://c2pa.org/c2pa-clarification-to-c2pa-tdm-assertions-reference/" rel="noopener" target="_blank">C2PA clarification</a></p></div>
+    </div>
+    <h3 style="margin-top:16px">8.7 The kit the builder emits</h3>
+    <div class="two">
+      <div><p class="code">robots.txt (excerpt)</p><pre class="kit" id="kitRobots"></pre></div>
+      <div><p class="code">head tags for every page</p><pre class="kit" id="kitHead"></pre></div>
+    </div>
+  </section>
+
+  <!-- §10 -->
+  <section class="sec" id="students" aria-labelledby="h10">
+    <span class="panel-code" aria-hidden="true">§10 · Students</span>
+    <h2 id="h10">For students: reading the label</h2>
+    <div class="cols">
+      <div class="card"><span class="panel-code" aria-hidden="true">10.1</span><h3>The number is the rule</h3><p>L0: any AI tool. L1: only Copilot or Gemini, signed in with go.olemiss.edu. L2: no AI tool at all. Green means the campus tool is fine, red means stop.</p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">10.2</span><h3>How to tell you are in the campus tool</h3><p>You signed in with your go.olemiss.edu account, the same login as your email. If you opened the free app and never signed in with that account, you are not in the campus tool. <a href="#lane">Check your lane.</a></p></div>
+      <div class="card" style="border-left:10px solid var(--secondary)"><span class="panel-code" aria-hidden="true">10.3</span><h3>Ask your AI first</h3><p>Before pasting any course material into an AI tool, paste the label's <b>ask-your-AI-first prompt</b> as your own message (your instructor can give it to you, or build it from the label). The assistant checks the label and replies STOP or PROCEED. In testing this held on every model where the embedded label did not.</p></div>
+      <div class="card"><span class="panel-code" aria-hidden="true">10.4</span><h3>If a chatbot stops</h3><p>That is the label working. Open the material in the campus tool instead, or ask your instructor. Your own drafts and notes take the same trip as the instructor's PDF, so §4 is for you too.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>About</h3>
+      <p>Campus Only Label COL/1.0. A faculty and student resource from Marc Watkins, University of Mississippi. Companion to the Academic Integrity Icons. Links were checked on 2026-11-04; vendors move settings, so the linked page is the authority where the steps differ.</p>
+      <p>Design: a Design Boards round in the Normblatt school (RAL 9003 signal white, 5004 black blue, 3020 traffic red, 6032 signal green; Barlow Condensed and Barlow; mechanical motion).</p>
+    </div>
+    <div>
+      <h3>Attribution and AI disclosure</h3>
+      <p>Made with Claude Fable 5.1, which wrote the code, the notice text and this page's prose to Marc's specification; a Claude research agent verified every link. Reuse under CC BY 4.0. Nothing here is legal advice; check your institution's policies.</p>
+      <p class="code">RAL names are a registered color standard; the hexes are screen approximations.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/label.js"></script>
+<script>
+(function () {
+  var C = window.COL, st = C.defaults(); st.holder = 'J. Doe'; st.title = 'Essay 2';
+  var tool = null, acct = null;
+  function det (el, items, name, onpick) { el.innerHTML = items.map(function (it, i) { return '<label class="detent" data-sig="' + it.sig + '"><input type="radio" name="' + name + '" value="' + i + '"><p class="k">' + it.k + '</p><b>' + it.b + '</b><span>' + it.s + '</span></label>'; }).join('');
+    el.querySelectorAll('input').forEach(function (r) { r.addEventListener('change', function () { el.querySelectorAll('.detent').forEach(function (d, i) { d.classList.toggle('on', i === +r.value); }); onpick(+r.value); }); }); }
+  det(document.getElementById('qTool'), [{ k: 'A', b: 'Copilot or Gemini', s: 'the two tools UM licenses', sig: 'ink' }, { k: 'B', b: 'Something else', s: 'ChatGPT, Claude, Meta AI, Grok, Perplexity, a free app', sig: 'ink' }], 'qt', function (v) { tool = v; laneOut(); });
+  det(document.getElementById('qAcct'), [{ k: 'A', b: 'go.olemiss.edu', s: 'the same login as your email', sig: 'ink' }, { k: 'B', b: 'Personal, free, or not signed in', s: 'gmail, outlook, Apple ID, or a guest session', sig: 'ink' }], 'qa', function (v) { acct = v; laneOut(); });
+  function laneOut () { if (tool === null || acct === null) return; var r = document.getElementById('laneResult');
+    if (tool === 0 && acct === 0) r.innerHTML = '<div class="band b">Lane B · Protected</div><div class="txt"><p>Your upload is processed under the university\u2019s contract: no training, retention set by the campus admin, FERPA agreement on file.</p><p>An L1 label allows this. An L2 label still says no.</p></div>';
+    else if (tool === 0 && acct === 1) r.innerHTML = '<div class="band a">Lane A · Not protected</div><div class="txt"><p>Right tool, wrong door. The personal version of Copilot or Gemini runs under consumer terms and may train on what you upload.</p><p>Sign out and sign back in with go.olemiss.edu. Then you are in Lane B.</p></div>';
+    else r.innerHTML = '<div class="band a">Lane A · Not protected</div><div class="txt"><p>Consumer terms apply. The upload may be used for training unless you have switched that off (\u00a74), is kept in logs, and could be produced in a lawsuit.</p><p>For labeled course material, use Copilot or Gemini with your go.olemiss.edu sign-in instead.</p></div>'; }
+  document.getElementById('exampleNotice').textContent = C.noticeText(st);
+  document.getElementById('kitRobots').textContent = C.robotsKit(st).split('\n').slice(0, 14).join('\n') + '\n# … ' + C.CRAWLERS.length + ' crawlers in the full file';
+  document.getElementById('kitHead').textContent = C.headKit(st);
+})();
+</script>
+</body>
+</html>
