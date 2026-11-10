@@ -26,7 +26,7 @@
 <main id="main">
   <h1 id="ttl" class="small" style="font-size:var(--step-2);margin-bottom:12px"></h1>
   <div id="out"></div>
-  <div class="foot"><span>Campus Only Label <span id="codeOut" class="mono"></span></span><span><a href="learn.html">What this label means</a> · <a href="index.html" id="editLink">Build your own</a></span></div>
+  <div class="foot"><span>Campus Only Label <span id="codeOut" class="mono"></span></span><span><a href="learn.html">What this label means</a> · <a href="https://github.com/mwatkins03-netizen/Copyright-Labels">Source and tests</a> · <a href="index.html" id="editLink">Build your own</a></span></div>
 </main>
 <script src="assets/label.js"></script>
 <script>
@@ -37,7 +37,7 @@
   if (q.get('prompt') === '1') { document.getElementById('ttl').textContent = 'Ask your AI first'; document.getElementById('out').innerHTML = '<p style="max-width:62ch">Before you paste any course material into an AI tool, paste this message first. The assistant checks the label and replies STOP or PROCEED. A STOP means: open the material in Copilot or Gemini with your go.olemiss.edu account instead.</p><div class="actions" style="margin:8px 0 12px"><button class="btn primary" id="cp" type="button">Copy the prompt</button></div><textarea readonly id="pp" style="width:100%;min-height:320px;border:1px solid var(--on-surface);padding:10px;font-family:var(--font-mono);font-size:.78rem;line-height:1.5"></textarea>'; document.getElementById('pp').value = C.permissionPrompt(st); document.getElementById('cp').addEventListener('click', function () { C.copy(C.permissionPrompt(st), function (ok) { C.toast(ok ? 'Copied' : 'Copy failed'); }); }); document.getElementById('codeOut').textContent = C.code(st); document.getElementById('editLink').href = 'index.html#' + C.encodeShort(st); return; }
   document.getElementById('ttl').textContent = st.title || '';
   document.title = (st.title ? st.title + ' · ' : '') + 'Campus Only Label ' + C.LEVELS[st.level].code;
-  if (!st.terms) st.terms = location.href.split('?')[0] + '#' + C.encodeShort(st); document.getElementById('out').innerHTML = C.inlineHTML(st);
+  if (!st.terms) st.terms = location.href.split(/[?#]/)[0] + '#' + C.encodeShort(st); document.getElementById('out').innerHTML = C.inlineHTML(st);
   document.getElementById('codeOut').textContent = C.code(st);
   document.getElementById('editLink').href = 'builder.html#' + C.encodeShort(st);
   var ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.textContent = C.jsonLD(st); document.head.appendChild(ld);

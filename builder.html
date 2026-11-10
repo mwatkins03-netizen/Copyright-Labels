@@ -74,8 +74,8 @@
           <div class="field"><label for="inst">Institution</label><input id="inst" type="text" autocomplete="off"></div>
           <div class="field"><label for="title">Assignment or document title (optional)</label><input id="title" type="text" placeholder="e.g. Essay 2: Rhetorical Analysis" autocomplete="off"></div>
         </div>
-        <div class="field"><label>Training clause</label><div class="detents two" role="radiogroup" aria-label="Training clause" id="train"></div></div>
-        <div class="field"><label>Scope</label><div class="detents three" role="radiogroup" aria-label="Scope" id="scope"></div></div>
+        <div class="field"><span class="lbl" id="l-train">Training clause</span><div class="detents two" role="radiogroup" aria-labelledby="l-train" id="train"></div></div>
+        <div class="field"><span class="lbl" id="l-scope">Scope</span><div class="detents three" role="radiogroup" aria-labelledby="l-scope" id="scope"></div></div>
         <div class="field"><label for="note">Extra line for students (optional)</label><textarea id="note" placeholder="e.g. If you are unsure whether a tool is campus-licensed, ask before you use it."></textarea></div>
         <div class="field"><label for="terms">Full-terms link (optional)</label><input id="terms" type="text" placeholder="Leave blank to use this label's own page" autocomplete="off"><div class="note">If you host the label on a campus site, put that address here. The short notice cites it; the full terms live there.</div></div>
         <div class="field"><label for="contact">Contact (optional)</label><input id="contact" type="text" placeholder="e.g. jdoe@olemiss.edu" autocomplete="off"></div>
@@ -135,11 +135,11 @@
     </div>
 
     <aside class="preview-col" aria-label="Label preview">
-      <div class="sheet preview">
+      <div class="sheet preview" id="sheet">
         <span class="panel-code" aria-hidden="true">Sheet · 1/1</span>
         <div class="label-wrap" id="badge"></div>
         <div class="student"><b>What students read</b><div id="studentText"></div></div>
-        <div class="student" id="readiness" style="border-top:0;font-size:.86rem;color:var(--muted)"></div>
+        <div class="student readiness" id="readiness" role="status"></div>
         <details class="agent" open><summary>Short notice to AI systems (what ships inline)</summary><pre id="notice"></pre></details>
         <details class="agent"><summary>Full terms (behind the label link, and in the ask-first prompt)</summary><pre id="noticeFull"></pre></details>
         <div class="title-block" id="titleBlock"></div>
@@ -153,7 +153,7 @@
   <div class="wrap">
     <div>
       <h3>About this label</h3>
-      <p>Campus Only Label COL/1.0 is a request, not a lock: it tells people and machines what the copyright holder permits, in words a chatbot can act on. It does not technically prevent an upload. <a href="learn.html">Why it matters, and what to do about the rest.</a></p>
+      <p>Campus Only Label COL/1.0 is a request, not a lock: it tells people and machines what the copyright holder permits, in words a chatbot can act on. It does not technically prevent an upload. <a href="learn.html">Why it matters, and what to do about the rest.</a> <a href="https://github.com/mwatkins03-netizen/Copyright-Labels">Source, spec and test results on GitHub.</a></p>
       <p>Built from the Academic Integrity Icons builder pattern. Design round logged on a Design Board (Normblatt school, RAL 9003 · 5004 · 3020 · 6032).</p>
     </div>
     <div>
@@ -227,14 +227,15 @@
       '<div class="wide"><b>Label code</b><span class="big mono">' + C.esc(C.code(st)) + '</span></div>' +
       '<div><b>Rev</b>' + C.esc(C.SPEC.split('/')[1]) + '</div>' +
       '<div class="wide"><b>Copyright holder</b>' + C.esc(C.holderLine(st)) + '</div>' +
-      '<div><b>Date</b>' + new Date().toISOString().slice(0, 10) + '</div>' +
+      '<div><b>Date</b>' + C.today() + '</div>' +
       '<div class="wide"><b>Scope</b>' + C.esc(C.SCOPES[st.scope].label) + (st.title ? ' · ' + C.esc(st.title) : '') + '</div>' +
       '<div><b>Level</b>' + L.code + ' ' + L.ral + '</div>' +
       '<div class="wide"><b>Signal colors</b><div class="chips"><span class="chip" style="background:var(--accent)">3020</span><span class="chip" style="background:var(--secondary)">6032</span><span class="chip" style="background:var(--on-surface)">5004</span><span class="chip ink-on" style="background:var(--surface)">9003</span></div></div>' +
       '<div><b>Spec</b><a href="learn.html#spec">' + C.esc(C.SPEC) + '</a></div>';
     var url = labelURL();
     $('#link').value = url; $('#linkOpen').href = url;
-    $('#embed').value = '<iframe src="' + url + '" title="Campus Only Label ' + C.esc(C.code(st)) + '" width="100%" height="260" style="border:0;max-width:680px" loading="lazy"></iframe>';
+    var eu = new URL(url); eu.search = '?embed=1';
+    $('#embed').value = '<iframe src="' + C.esc(eu.href) + '" title="Campus Only Label ' + C.esc(C.code(st)) + '" width="100%" height="' + [350, 430, 400][st.level] + '" style="border:0;max-width:680px" loading="lazy"></iframe>';
     $('#html').value = C.inlineHTML(Object.assign({}, st, { terms: st.terms || labelURL() }));
     $('#text').value = 'CAMPUS ONLY LABEL ' + C.code(st) + ' \u2014 ' + L.name.toUpperCase() + '\n' + C.studentText(st) + '\n\n' + C.shortNotice(Object.assign({}, st, { terms: st.terms || labelURL() }));
     $('#head').value = C.headKit(st);
@@ -243,18 +244,25 @@
     var items = C.labelPack(stT, { label: labelURL() });
     var packEl = $('#pack'); var openIds = {}; packEl.querySelectorAll('details[open]').forEach(function (d) { openIds[d.getAttribute('data-id')] = true; });
     packEl.innerHTML = items.map(function (it, i) { return '<details class="pack-item" data-id="' + it.id + '"' + (openIds[it.id] ? ' open' : '') + '><summary><span><span class="k">P' + (i + 1) + '</span> <b>' + C.esc(it.title) + '</b></span><span class="k">copy ↓</span></summary>' + (it.hint ? '<div class="hint">' + C.esc(it.hint) + '</div>' : '') + '<textarea readonly id="pack_' + it.id + '" aria-label="' + C.esc(it.title) + '">' + C.esc(it.text) + '</textarea><div class="actions"><button class="btn small" type="button" data-copy="pack_' + it.id + '">Copy</button></div></details>'; }).join('');
-    packEl.querySelectorAll('[data-copy]').forEach(function (b) { b.addEventListener('click', function () { C.copy($('#' + b.getAttribute('data-copy')).value, function (ok) { C.toast(ok ? 'Copied' : 'Copy failed'); }); }); });
     $('#packAll').value = C.labelPackText(stT, { label: labelURL() });
     $('#oddsNums').innerHTML = '<span class="num"><b>3 of 6</b>model configurations honored an embedded L1 label every time</span><span class="num"><b>4 of 6</b>honored an embedded L2 exam label</span><span class="num"><b>13 of 13</b>runs stopped when the student sent the ask-first prompt</span><span class="num"><b>~1 in 4</b>held after the student then said "ignore it"</span><span class="num"><b>1 of 3</b>Claude models declined a translation request with the short footer (2 of 3 with the full notice)</span>';
     $('#b3').hidden = st.level !== 1;
-    $('#readiness').textContent = (st.level > 0 && st.train === 1) ? 'Check this combination: restricted processing with training permitted. T1 does not relax the processing rule; the notice says so, but consider T0.' : (!String(st.holder || '').trim() ? 'Add your name as copyright holder to personalize the label.' : (st.level === 1 && !C.toolsList(st).length ? 'Add at least one approved campus tool before sharing.' : 'Label is ready to copy or export.'));
+    var rd = (st.level > 0 && st.train === 1) ? ['warn', 'Check this combination: restricted processing with training permitted. T1 does not relax the processing rule; the notice says so, but consider T0.']
+      : (st.level === 1 && !C.toolsList(st).length) ? ['warn', 'Add at least one approved campus tool before sharing.']
+      : (st.terms && !/^https?:\/\/\S+$/i.test(String(st.terms).trim())) ? ['warn', 'The full-terms link should be a complete web address starting with https://.']
+      : !String(st.holder || '').trim() ? ['todo', 'Add your name as copyright holder to personalize the label.']
+      : ['ok', 'Label is ready to copy or export.'];
+    var rEl = $('#readiness'); rEl.setAttribute('data-state', rd[0]); if (rEl.textContent !== rd[1]) rEl.textContent = rd[1];
+    var r3 = document.querySelector('.rail a[href="#b3"]'); if (r3) r3.hidden = st.level !== 1;
     var h = C.encode(st); if (location.hash.slice(1) !== h) history.replaceState(null, '', '#' + h);
   }
   render();
+  /* the badge is measured with the real fonts once they arrive */
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
   window.addEventListener('hashchange', function () { var n = C.decode(location.hash); if (C.encode(n) !== C.encode(st)) location.reload(); });
 
   document.querySelectorAll('.rail a[href^="#"]').forEach(function (a) { a.addEventListener('click', function (e) { var t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ block: 'start' }); } }); });
-  document.querySelectorAll('[data-copy]').forEach(function (b) { b.addEventListener('click', function () { C.copy($('#' + b.getAttribute('data-copy')).value, function (ok) { C.toast(ok ? 'Copied' : 'Copy failed: select the text and copy by hand'); }); }); });
+  document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-copy]'); if (!b) return; var src = document.getElementById(b.getAttribute('data-copy')); if (!src) return; C.copy(src.value, function (ok) { C.toast(ok ? 'Copied' : 'Copy failed: select the text and copy by hand'); }); });
   $('#dlPage').addEventListener('click', function () { C.download(C.fileName(st, 'html'), C.pageHTML(st), 'text/html;charset=utf-8'); C.toast('HTML page downloaded'); });
   $('#dlSVG').addEventListener('click', function () { C.download(C.fileName(st, 'svg'), C.badgeSVG(st, 880), 'image/svg+xml;charset=utf-8'); C.toast('SVG downloaded'); });
   $('#dlPNG').addEventListener('click', function () { C.badgePNG(st, 1320, function (blob) { if (!blob) return C.toast('PNG failed: try the SVG'); C.download(C.fileName(st, 'png'), blob); C.toast('PNG downloaded'); }); });

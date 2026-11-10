@@ -21,6 +21,17 @@ campus-only-label/
 
 No build step, no dependencies, no server, nothing stored anywhere. The whole label travels inside the link.
 
+## Builder fixes (v1.7, 2026-11-10)
+
+- **Badge text is measured, not guessed.** `badgeLayout` in `assets/label.js` measures each line on a canvas and feeds both the SVG and the PNG, so the copyright line is no longer cut off. The bottom line now reads `COL/1.0 · L1 · T0 · S-A · no AI training`, so the training clause is never the part that gets truncated. The PNG's `T0 · S-A` tag is centred under the level code.
+- **Tools keep their own sign-in.** Tools that share a sign-in clause are written "A or B, signed in with…"; tools with different ones each keep theirs. Three or more list as "A, B or C".
+- **Exports use full addresses.** The spec link in the head tags, JSON-LD, HTML comment and robots.txt resolves on any site.
+- **Embed** points at `label.html?embed=1` with a height that fits the label (350 / 430 / 400 px for L0 / L1 / L2).
+- **Preview** scrolls inside itself on short screens and sits above Export on phones. The status line flags problems in red and "ready" in green.
+- **Repo link.** Every notice to AI systems (short and full), the paste-in HTML, the label page and each page footer link to the public repo, so a student or an agent meeting the label cold can find out what it is. The address is `REPO_URL` at the top of `assets/label.js`; change it if you fork.
+- **Discussion-prompt line** is worded per level. Dates use the local day, not UTC.
+- Training and Scope options are set in sentence case like the Level options.
+
 ## Live document downloads (v1.6)
 
 `assets/docgen.js` builds Word files (syllabus, assignment sheet, exam) and a PowerPoint deck in the browser from the current label, using docx 9.15.3 and pptxgenjs 4.0.1 loaded from jsDelivr on first click; `print.html` is a print-ready handout with the one-line label fixed in the footer of every page (Save as PDF). Buttons live on the Start page (step 3) and the Examples page strip. Everything runs client-side, so GitHub Pages hosts it unchanged. The fixed samples in `examples-docs/` remain for anyone who wants a placeholder file.
@@ -59,7 +70,7 @@ Three doors at the top (faculty, student, opt-out), big level plates, a two-ques
 
 ## Preview
 
-The Box path does not serve; copy to `/tmp/campus-only-label` and run the `campus-only-label` launch config (port 8830).
+The Box path does not serve; copy to `/tmp/copyright-labels` and run the `copyright-labels` launch config (port 8830).
 
 ## Deploy to GitHub Pages
 
